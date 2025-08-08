@@ -2906,3 +2906,12 @@ a{font-weight: 500;}
   max-width: 100%;
   max-height: 100%;
 }
+.footer_content {
+  font-size: 14px;
+}
+
+.footer_content p,
+.footer_content a,
+.footer_content li {
+  font-size: 14px;
+}
