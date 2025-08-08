@@ -209,7 +209,7 @@
 }
 
 .custom-btn-one {
-  background-color: #ff4f81; /* or match the "Contact Us" color */
+  background-color: #B86AFB; /* or match the "Contact Us" color */
   color: white;
   border-radius: 50px;
   padding: 8px 20px;
@@ -222,7 +222,7 @@
 }
 
 .custom-btn-one:hover {
-  background: linear-gradient(to right, #ff4f81, #000);
+  background: linear-gradient(to right, #680DB5, #000);
   color: white;
 }
 

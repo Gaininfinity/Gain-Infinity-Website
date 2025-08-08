@@ -51,7 +51,7 @@
     --text-color    : #010212;;
     --heading-color : #010212;
     --prime-one     : #ffffff;
-    --prime-two     : #ff15a1;
+    --prime-two     : #B86AFB;
     --prime-three   : #FB3C1D;
     --prime-four    : #343230;
     --prime-five    : #FFD1B0;
@@ -2828,7 +2828,7 @@ a{font-weight: 500;}
 .wa-bubble {
   display: flex;
   align-items: center;
-  background: #ff15a1;
+  background: #B86AFB;
   color: #fff;
   border-radius: 30px;
   padding: 10px 10px;
@@ -2896,4 +2896,13 @@ a{font-weight: 500;}
     width: 22px;
     height: 22px;
   }
+}
+/* Set logo size globally */
+.logo img,
+.footer_logo .img-fluid {
+  width: 170px !important;
+  height: 51px !important;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
 }
