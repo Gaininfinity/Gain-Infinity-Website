@@ -22,9 +22,9 @@
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" sizes="72x33" href="images/fabicon.png">
 		<!-- Main style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" media="all">
 		<!-- responsive style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">	
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}" media="all">
 	</head>
 
 	<body>
@@ -43,11 +43,11 @@
 			<div class="theme-main-menu sticky-menu theme-menu-one theme-menu-two tran5s wow fadeInUp">
 				<div class="inner-content">
 					<div class="d-flex align-items-center justify-content-between">
-						<div class="d-flex logo order-lg-0"><a href="" class="d-block"><img src="images/logo/logo.png" alt=""></a></div>
+						<div class="d-flex logo order-lg-0"><a href="" class="d-block"><img src="{{ url_for('static', filename='images/logo/logo.png') }}" alt=""></a></div>
 						<div class="right-wiget ms-auto d-lg-flex align-items-center justify-content-center order-lg-3 ">
-							 <div class="search-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><a href="#"><img src="images/icon/search.svg" alt=""></a></div>
-							 <div class="grid-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><a href="#"><img src="images/icon/grid.svg" alt=""></a></div>
-							<div class=""><a class="custom-btn-one" href="contact.html">Contact Us</a></div>
+							 <div class="search-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><a href="#"><img src="{{ url_for('static', filename='images/icon/search.svg') }}" alt=""></a></div>
+							 <div class="grid-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><a href="#"><img src="{{ url_for('static', filename='images/icon/grid.svg') }}" alt=""></a></div>
+							<div class=""><a class="custom-btn-one" href="{{ url_for ('contact') }}">Contact Us</a></div>
 						</div>
 						 <!-- ================================================
 						                      nav bar start
@@ -58,27 +58,30 @@
 								<span></span>
 							  </button>
 							  <div class="collapse navbar-collapse" id="navbarNav">
-									<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-										<li class="nav-item">
-											<a class="nav-link" href="index.html">Home</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="about-us.html">About Us</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="case.html">Portfolio</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="service.html">Services</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="blog.html" >Blog</a>
-										</li>
-									</ul>
-								    <div class="right-wiget md-mt-30 d-flex align-items-center order-lg-3 d-lg-none ">
-									   <div class=""><a class="custom-btn-one position-relative" href="contact.html">Contact Us</a></div>
-								    </div>
-							   </div>
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('index') }}">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('about_us') }}">About Us</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('case') }}">Portfolio</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('service') }}">Services</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('blog') }}">Blog</a>
+									</li>
+								</ul>
+								<div class="right-wiget md-mt-30 d-flex align-items-center order-lg-3 d-lg-none">
+									<div class="">
+										<a class="custom-btn-one position-relative" href="{{ url_for('contact') }}">Contact Us</a>
+									</div>
+								</div>
+							</div>
+
 						    </nav>
 						</div>
 							<!-- //header nav  -->
@@ -94,7 +97,7 @@
 			<!--================================banner section start ===========================  -->
 			<div class="banner_slider_one mb-120 lg-mb-80 tran5s " id="banner_slider_one">
 				<div class="iten">
-					<div class="banner-one tran5s pt-220 pb-140 md-pt-100 md-pb-80" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url('images/bg/bg-01.jpg') center center no-repeat;">
+					<div class="banner-one tran5s pt-220 pb-140 md-pt-100 md-pb-80" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url('{{ url_for('static', filename='images/bg/bg-01.jpg') }}') center center no-repeat;">
 						<div class="container">
 							<div class="row">
 								<div class="banner-rapper-one ms-auto position-relative">
@@ -109,7 +112,7 @@
 					</div>
 				</div>
 				<div class="iten">
-					<div class="banner-one tran5s pt-220 pb-140 md-pt-100 md-pb-80" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url('images/bg/bg-03.jpg') center center no-repeat;">
+					<div class="banner-one tran5s pt-220 pb-140 md-pt-100 md-pb-80" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url('{{ url_for('static', filename='images/bg/bg-03.jpg') }}') center center no-repeat;">
 						<div class="container">
 							<div class="row">
 								<div class="banner-rapper-one ms-auto position-relative">
@@ -122,7 +125,7 @@
 					</div>
 				</div>
 				<div class="iten">
-					<div class="banner-one tran5s pt-220 pb-140 md-pt-100 md-pb-80" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url('images/bg/bg-04.jpg') center center no-repeat;">
+					<div class="banner-one tran5s pt-220 pb-140 md-pt-100 md-pb-80" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url({{url_for('static', filename='images/bg/bg-04.jpg')}}) center center no-repeat;">
 						<div class="container">
 							<div class="row">
 								<div class="banner-rapper-one ms-auto position-relative">
@@ -143,7 +146,7 @@
 					<div class="row">
 						<div class="col-lg-5">
 							<div class="left-about position-relative">
-								<div class=""><img src="images/about/about-01.jpg" alt="" class=""></div>
+								<div class=""><img src="{{ url_for('static', filename='images/about/about-01.jpg') }}" alt="" class=""></div>
 								<div class=""><h5 class="h5 fw-400 mt-30">Incredibly fast and amazing features</h5></div>
 								<div class=""><p class="mb-30 mt-30">We provide digital experience services to startups and small businesses velit purus aliquet, massa fringilla</p></div>
 								<div class=""><a href="" class="custom-btn-one fw-500">About us</a></div>
@@ -210,34 +213,34 @@
 						<div class="row">
 							<div class="col-xl-3 col-lg-6">
 								<div class="offer-one lg-mb-30 text-center">
-									<div class="offer-pic mb-20 lg-mb-30"><img src="images/icon/offer_01.svg" alt="" class=""></div>
+									<div class="offer-pic mb-20 lg-mb-30"><img src="{{ url_for('static', filename='images/icon/offer_01.svg') }}" alt="" class=""></div>
 									<div class="mb-10 lg-mb-30"><h6 class="h6 fw-700"><a href="" class="">Digital Experience</a></h6></div>
 									<div class="mb-20 lg-mb-30"><p class="fs-16">Need something changed or is there something not quite working Aellente</p></div>
-									<div class=""><a href="" class="offer-link"> <img src="images/icon/arrow_01.svg" alt="" class=""></a></div>
+									<div class=""><a href="" class="offer-link"> <img src="{{ url_for('static', filename='images/icon/arrow_01.svg') }}" alt="" class=""></a></div>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-6">
 								<div class="offer-one lg-mb-30 text-center">
-									<div class="offer-pic mb-20 lg-mb-30"><img src="images/icon/offer_02.svg" alt="" class=""></div>
+									<div class="offer-pic mb-20 lg-mb-30"><img src="{{ url_for('static', filename='images/icon/offer_02.svg') }}" alt="" class=""></div>
 									<div class="mb-10 lg-mb-30"><h6 class="h6 fw-700"><a href="" class="">Project strategy</a></h6></div>
 									<div class="mb-20 lg-mb-30"><p class="fs-16">Need something changed or is there something not quite working Aellente</p></div>
-									<div class=""><a href="" class="offer-link"> <img src="images/icon/arrow_01.svg" alt="" class=""></a></div>
+									<div class=""><a href="" class="offer-link"> <img src="{{ url_for('static', filename='images/icon/arrow_01.svg') }}" alt="" class=""></a></div>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-6">
 								<div class="offer-one lg-mb-30 text-center">
-									<div class="offer-pic mb-20 lg-mb-30"><img src="images/icon/offer_03.svg" alt="" class=""></div>
+									<div class="offer-pic mb-20 lg-mb-30"><img src="{{ url_for('static', filename='images/icon/offer_03.svg') }}" alt="" class=""></div>
 									<div class="mb-10 lg-mb-30"><h6 class="h6 fw-700"><a href="" class="">Marketing</a></h6></div>
 									<div class="mb-20 lg-mb-30"><p class="fs-16">Need something changed or is there something not quite working Aellente</p></div>
-									<div class=""><a href="" class="offer-link"> <img src="images/icon/arrow_01.svg" alt="" class=""></a></div>
+									<div class=""><a href="" class="offer-link"> <img src="{{ url_for('static', filename='images/icon/arrow_01.svg') }}" alt="" class=""></a></div>
 								</div>
 							</div>
 							<div class="col-xl-3 col-lg-6">
 								<div class="offer-one text-center">
-									<div class="offer-pic mb-20 lg-mb-30"><img src="images/icon/offer_04.svg" alt="" class=""></div>
+									<div class="offer-pic mb-20 lg-mb-30"><img src="{{ url_for('static', filename='images/icon/offer_03.svg') }}" alt="" class=""></div>
 									<div class="mb-10 lg-mb-30"><h6 class="h6 fw-700"><a href="" class="">Development</a></h6></div>
 									<div class="mb-20 lg-mb-30"><p class="fs-16">Need something changed or is there something not quite working Aellente</p></div>
-									<div class=""><a href="" class="offer-link"> <img src="images/icon/arrow_01.svg" alt="" class=""></a></div>
+									<div class=""><a href="" class="offer-link"> <img src="{{ url_for('static', filename='images/icon/arrow_01.svg') }}" alt="" class=""></a></div>
 								</div>
 							</div>
 						</div>
@@ -250,8 +253,8 @@
 			<section class="choose-one mb-140 lg-mb-80 tran5s wow fadeInUp">
 	<div class="container">
 		<div class="choose-one-rapper pt-90 md-pt-50 position-relative">
-			<img src="images/shape/shape-05.svg" alt="" class="shapes shape-05">
-			<img src="images/shape/shape-06.svg" alt="" class="shapes shape-06">
+			<img src="{{ url_for('static', filename='images/shape/shape-05.svg') }}" alt="" class="shapes shape-05">
+			<img src="{{ url_for('static', filename='images/shape/shape-06.svg') }}" alt="" class="shapes shape-06">
 			<div class="row d-flex align-items-end">
 				<div class="col-lg-6">
 					<div class="left-choose position-relative md-mb-80">
@@ -288,8 +291,8 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="right-choose position-relative pl-20 md-pl-0">
-						<img src="images/about/about-02.png" alt="" class="about-02">
-						<img src="images/shape/shape-07.svg" alt="" class="shape-07">
+						<img src="{{ url_for('static', filename='images/about/about-02.png') }}" alt="" class="about-02">
+						<img src="{{ url_for('static', filename='images/shape/shape-07.svg') }}" alt="" class="shape-07">
 					</div>
 				</div>
 			</div>
@@ -310,7 +313,7 @@
 						<div class="row">
 							<div class="col-lg-3 col-md-4">
 								<div class="case-one md-mb-30 position-relative">
-									<a href="images/case/case_01.png" class="view_pic"><img src="images/case/case_01.png" alt="" class=""></a>
+									<a href="{{ url_for('static', filename='images/case/case_01.png') }}" class="view_pic"><img src="{{ url_for('static', filename='images/case/case_01.png') }}" alt="" class=""></a>
 									<div class="shapes hover-box">
 										<span class="span-two">Strategy</span>
 										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
@@ -319,7 +322,7 @@
 							</div>
 							<div class="col-lg-3 col-md-4">
 								<div class="case-one md-mb-30 position-relative">
-									<a href="images/case/case_02.png" class="view_pic"><img src="images/case/case_02.png" alt="" class=""></a>
+									<a href="{{ url_for('static', filename='images/case/case_02.png') }}" class="view_pic"><img src="{{ url_for('static', filename='images/case/case_02.png') }}" alt="" class=""></a>
 									<div class="shapes hover-box">
 										<span class="span-two">Strategy</span>
 										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
@@ -328,7 +331,7 @@
 							</div>
 							<div class="col-lg-3 col-md-4">
 								<div class="case-one md-mb-30 position-relative">
-									<a href="images/case/case_03.png" class="view_pic"><img src="images/case/case_03.png" alt="" class=""></a>
+									<a href="{{ url_for('static', filename='images/case/case_03.png') }}" class="view_pic"><img src="{{ url_for('static', filename='images/case/case_03.png') }}" alt="" class=""></a>
 									<div class="shapes hover-box">
 										<span class="span-two">Strategy</span>
 										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
@@ -337,7 +340,7 @@
 							</div>
 							<div class="col-lg-3 col-md-4">
 								<div class="case-one position-relative">
-									<a href="images/case/case_04.png" class="view_pic"><img src="images/case/case_04.png" alt="" class=""></a>
+									<a href="{{ url_for('static', filename='images/case/case_04.png') }}" class="view_pic"><img src="{{ url_for('static', filename='images/case/case_04.png') }}" alt="" class=""></a>
 									<div class="shapes hover-box">
 										<span class="span-two">Strategy</span>
 										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
@@ -356,9 +359,9 @@
 					<div class="row">
 						<div class="col-lg-6 pl-150 md-pl-0">
 							<div class="left-content  md-mb-50 position-relative">
-								<img src="images/slider/slider-01.png" alt="" class="position-relative">
-								<img src="images/shape/shape-08.svg" alt="" class="shapes shape-08">
-								<img src="images/shape/shape-09.svg" alt="" class="shapes shape-09">
+								<img src="{{ url_for('static', filename='images/slider/slider_01.png') }}" alt="" class="position-relative">
+								<img src="{{ url_for('static', filename='images/shape/shape-08.svg') }}" alt="" class="shapes shape-08">
+								<img src="{{ url_for('static', filename='images/shape/shape-09.svg') }}" alt="" class="shapes shape-09">
 								<span class="shapes shape_003"></span>
 								<span class="shapes shape_004"></span>
 							</div>
@@ -391,12 +394,24 @@
 			<div class="partner-one mb-140 lg-mb-80 tran5s wow fadeInUp">
 				<div class="container">
 					<div class="partner-slider d-flex align-items-end" id="partner_slider">
-						<div class="item"><img src="images/slider/slider-02.png" alt="" class=""></div>
-						<div class="item"><img src="images/slider/slider-03.png" alt="" class=""></div>
-						<div class="item"><img src="images/slider/slider-04.png" alt="" class=""></div>
-						<div class="item"><img src="images/slider/slider-05.png" alt="" class=""></div>
-						<div class="item"><img src="images/slider/slider-06.png" alt="" class=""></div>
-						<div class="item"><img src="images/slider/slider-02.png" alt="" class=""></div>
+						<div class="item">
+							<img src="{{ url_for('static', filename='images/slider/slider-02.png') }}" alt="">
+						</div>
+						<div class="item">
+							<img src="{{ url_for('static', filename='images/slider/slider-03.png') }}" alt="">
+						</div>
+						<div class="item">
+							<img src="{{ url_for('static', filename='images/slider/slider-04.png') }}" alt="">
+						</div>
+						<div class="item">
+							<img src="{{ url_for('static', filename='images/slider/slider-05.png') }}" alt="">
+						</div>
+						<div class="item">
+							<img src="{{ url_for('static', filename='images/slider/slider-06.png') }}" alt="">
+						</div>
+						<div class="item">
+							<img src="{{ url_for('static', filename='images/slider/slider-02.png') }}" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -406,8 +421,8 @@
 			<div class="blog-one mb-140 lg-mb-80 position-relative wow fadeInUp">
 				<div class="container">
 					<div class="blog-one-rapper position-relative pt-90 pb-120 md-pt-40 md-pb-50">
-						<img src="images/shape/shape-10.svg" alt="" class="shapes shape-10">
-						<img src="images/shape/shape-11.svg" alt="" class="shapes shape-11">
+						<img src="{{ url_for('static', filename='images/shape/shape-10.svg') }}" alt="" class="shapes shape-10">
+						<img src="{{ url_for('static', filename='images/shape/shape-11.svg') }}" alt="" class="shapes shape-11">
 						<span class="shapes shape_003"></span>
 						<div class="text-center">
 							<div class=""><span class="span-two fs-16 fw-500">Our Blog update</span></div>
@@ -417,43 +432,74 @@
 							<div class="row">
 								<div class="col-xl-4 col-lg-6 lg-mb-30">
 									<div class="card">
-										<img src="images/blog/blog_01.jpg" alt="" class="">
+										<img src="{{ url_for('static', filename='images/blog/blog_01.jpg') }}" alt="" class="">
 										<div class="card-body">
 											<div class="pt-20">
-												<img src="images/icon/calendar.svg" alt="" class=""><span class="pl-10 fs-15 fw-400">15 Nov, 2023</span>
-												<img src="images/icon/comment.svg" alt="" class="pl-10"><span class="pl-10 fs-15 fw-400">12 Comment</span>
+												<img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="" class="">
+												<span class="pl-10 fs-15 fw-400">15 Nov, 2023</span>
+												<img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
+												<span class="pl-10 fs-15 fw-400">12 Comment</span>
 											</div>
-											<div class=""><h6 class="color-one pt-20 fw-700 lh-36"><a href="blog-details (copy 2).html">Digital Privacy Changes And The Impact On Advertising</a></h6></div>
-											<div class=""><p class="pt-20 fs-16 mb-20">Dolor sed maecenas quis faucibus justo nibh ultricies praesent justo dolor</p></div>
+											<div class="">
+												<h6 class="color-one pt-20 fw-700 lh-36">
+													<a href="blog-details (copy 2).html">Digital Privacy Changes And The Impact On Advertising</a>
+												</h6>
+											</div>
+											<div class="">
+												<p class="pt-20 fs-16 mb-20">Dolor sed maecenas quis faucibus justo nibh ultricies praesent justo dolor</p>
+											</div>
 										</div>
 									</div>
+
 								</div>
 								<div class="col-xl-4 col-lg-6 lg-mb-30">
 									<div class="card">
-										<img src="images/blog/blog_02.jpg" alt="" class="">
+										<img src="{{ url_for('static', filename='images/blog/blog_02.jpg') }}" alt="" class="">
 										<div class="card-body">
 											<div class="pt-20">
-												<img src="images/icon/calendar.svg" alt="" class=""><span class="pl-10 fs-15 fw-400">15 Nov, 2023</span>
-												<img src="images/icon/comment.svg" alt="" class="pl-10"><span class="pl-10 fs-15 fw-400">12 Comment</span>
+												<img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="" class="">
+												<span class="pl-10 fs-15 fw-400">15 Nov, 2023</span>
+												<img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
+												<span class="pl-10 fs-15 fw-400">12 Comment</span>
 											</div>
-											<div class=""><h6 class="color-one pt-20 fw-700 lh-36"><a href="">Identity Design for a New Modern Agency</a></h6></div>
-											<div class=""><p class="pt-20 fs-16 mb-20">Dolor sed maecenas quis faucibus justo nibh ultricies praesent justo dolor</p></div>
+											<div class="">
+												<h6 class="color-one pt-20 fw-700 lh-36">
+													<a href="">Identity Design for a New Modern Agency</a>
+												</h6>
+											</div>
+											<div class="">
+												<p class="pt-20 fs-16 mb-20">
+													Dolor sed maecenas quis faucibus justo nibh ultricies praesent justo dolor
+												</p>
+											</div>
 										</div>
 									</div>
 								</div>
+
 								<div class="col-xl-4 col-lg-6 lg-mb-30">
 									<div class="card">
-										<img src="images/blog/blog_03.jpg" alt="" class="">
+										<img src="{{ url_for('static', filename='images/blog/blog_02.jpg') }}" alt="" class="">
 										<div class="card-body">
 											<div class="pt-20">
-												<img src="images/icon/calendar.svg" alt="" class=""><span class="pl-10 fs-15 fw-400">15 Nov, 2023</span>
-												<img src="images/icon/comment.svg" alt="" class="pl-10"><span class="pl-10 fs-15 fw-400">12 Comment</span>
+												<img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="" class="">
+												<span class="pl-10 fs-15 fw-400">15 Nov, 2023</span>
+												<img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
+												<span class="pl-10 fs-15 fw-400">12 Comment</span>
 											</div>
-											<div class=""><h6 class="color-one pt-20 fw-700 lh-36"><a href="">Inspiring Stories of Web Designers</a></h6></div>
-											<div class=""><p class="pt-20 fs-16 mb-20">Dolor sed maecenas quis faucibus justo nibh ultricies praesent justo dolor</p></div>
+											<div class="">
+												<h6 class="color-one pt-20 fw-700 lh-36">
+													<a href="">Identity Design for a New Modern Agency</a>
+												</h6>
+											</div>
+											<div class="">
+												<p class="pt-20 fs-16 mb-20">
+													Dolor sed maecenas quis faucibus justo nibh ultricies praesent justo dolor
+												</p>
+											</div>
 										</div>
 									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>
@@ -467,10 +513,10 @@
 						<div class="row text-center text-lg-start">
 						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-start">
 							<div class="footer_logo ms-lg-0 ms-2">
-							<a href=""><img src="images/logo/logo.png" alt="" class="img-fluid"></a>
+							<a href=""><img src="{{ url_for('static', filename='images/logo/logo.png') }}" alt="Logo"  class="img-fluid"></a>
 							</div>
 						</div>
-						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-start">
+						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-center">
 							<div>
 							<p class="mb-1 fw-bold">Phone</p>
 							<p class="mb-0">+234 (0)70 4735 0000</p>
@@ -525,13 +571,14 @@
 				</div>
 				</footer>
 			<div id="whatsapp-float">
-			<a href="https://wa.me/message/5GWZXWOCERUWH1" target="_blank" rel="noopener" class="wa-link">
-				<div class="wa-bubble">
-				<img src="images/icon/whatsapp.png" alt="WhatsApp" class="wa-icon" />
-				<span class="wa-text">Let's talk</span>
-				</div>
-			</a>
+				<a href="https://wa.me/message/5GWZXWOCERUWH1" target="_blank" rel="noopener" class="wa-link">
+					<div class="wa-bubble">
+						<img src="{{ url_for('static', filename='images/icon/whatsapp.png') }}" alt="WhatsApp" class="wa-icon" />
+						<span class="wa-text">Let's talk</span>
+					</div>
+				</a>
 			</div>
+
 			<!-- ============================== Footer end    ============================ -->
 			<button class="scroll-top">
 				<i class="bi bi-arrow-up-short"></i>
@@ -542,27 +589,17 @@
 
     	<!-- jQuery first, then Bootstrap JS -->
     	<!-- jQuery -->
-		<script src="vendor/jquery.min.js"></script>
-		<!-- Bootstrap JS -->
-		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<!-- circle progress bar -->
-		<script src="vendor/circle-progress.min.js"></script>
-		<!-- Slick Slider -->
-		<script src="vendor/slick/slick.min.js"></script>
-		<!-- js Counter -->
-		<script src="vendor/jquery.counterup.min.js"></script>
-		<!-- jquery.sidebar.min.js -->
-		<script src="vendor/jquery.sidebar.min.js"></script>
-		<!-- waypoints  -->
-		<script src="vendor/jquery.waypoints.min.js"></script>
-		<!-- jquery.magnific-popup.min.js -->
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<!-- Nice Select -->
-		<script src="vendor/nice-select/jquery.nice-select.min.js"></script>
-		<!-- wow js -->
-		<script src="vendor/wow.min.js"></script>
-		<!-- Theme js -->
-		<script src="js/theme.js"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/circle-progress.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.sidebar.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/nice-select/jquery.nice-select.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/wow.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 		</div> <!-- /.main-page-wrapper -->
 	</body>
 		<script>

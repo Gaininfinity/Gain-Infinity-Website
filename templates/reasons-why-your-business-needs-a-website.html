@@ -3,11 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="keywords" content="IT, Technology, online business, Ecommerce, Digital Marketing">
-		<meta name="description" content="Gain Infinity - Hosting Service Template for all kinds of IT, Technology, online business, Ecommerce, Website ,Digital Marketing">
+		<meta name="description" content="Gain Infinity - Hosting Service for all kinds of IT, Technology, online business, Ecommerce, Digital Marketing">
       	<meta property="site_name" content="Gain Infinity">
       	<meta property="type" content="website">
       	<meta property="title" content="Gain Infinity - Digital Marketing">
-		<meta name="og:image" content="images/assets/ogg.png">
 		<!-- For IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!-- For Resposive Device -->
@@ -19,13 +18,13 @@
 		<meta name="msapplication-navbutton-color" content="#6dbfb8">
 		<!-- iOS Safari -->
 		<meta name="apple-mobile-web-app-status-bar-style" content="#6dbfb8">
-		<title>5 reasons why your business needs a website - Gain Infinity</title>
+		<title>Gain Infinity - Digital Marketing Agency</title>
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" sizes="72x33" href="images/fabicon.png">
 		<!-- Main style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" media="all">
 		<!-- responsive style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">	
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}" media="all">
 	</head>
 
 	<body>
@@ -33,25 +32,22 @@
 			<!-- ===================================================
 				Loading Transition
 			==================================================== -->
-
 			<div id="preloader">
-				<div id="andeo-preloader" class="andeo-preloader">
+				<div id="preloader" class="preloader">
 					<div class="animation-preloader">
 					  <h1>GAIN INFINITY</h1>
 					</div>	
 				</div>
 			</div>
-
 			<!--=========================header html start  1=================================  -->
-
 			<div class="theme-main-menu sticky-menu theme-menu-one theme-menu-two tran5s wow fadeInUp">
 				<div class="inner-content">
 					<div class="d-flex align-items-center justify-content-between">
-						<div class="d-flex logo order-lg-0"><a href="" class="d-block"><img src="images/logo/logo.png" alt=""></a></div>
+						<div class="d-flex logo order-lg-0"><a href="" class="d-block"><img src="{{ url_for('static', filename='images/logo/logo.png') }}" alt=""></a></div>
 						<div class="right-wiget ms-auto d-lg-flex align-items-center justify-content-center order-lg-3 ">
-							 <div class="search-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><a href="#"><img src="images/icon/search.svg" alt=""></a></div>
-							 <div class="grid-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><a href="#"><img src="images/icon/grid.svg" alt=""></a></div>
-							<div class=""><a class="custom-btn-one" href="contact.html">Contact Us</a></div>
+							 <div class="search-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><a href="#"><img src="{{ url_for('static', filename='images/icon/search.svg') }}" alt=""></a></div>
+							 <div class="grid-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><a href="#"><img src="{{ url_for('static', filename='images/icon/grid.svg') }}" alt=""></a></div>
+							<div class=""><a class="custom-btn-one" href="{{ url_for ('contact') }}">Contact Us</a></div>
 						</div>
 						 <!-- ================================================
 						                      nav bar start
@@ -62,27 +58,30 @@
 								<span></span>
 							  </button>
 							  <div class="collapse navbar-collapse" id="navbarNav">
-									<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-										<li class="nav-item">
-											<a class="nav-link" href="index.html">Home</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="about-us.html">About Us</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="case.html">Portfolio</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="service.html">Services</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="blog.html" >Blog</a>
-										</li>
-									</ul>
-								    <div class="right-wiget md-mt-30 d-flex align-items-center order-lg-3 d-lg-none ">
-									   <div class=""><a class="custom-btn-one position-relative" href="contact.html">Contact Us</a></div>
-								    </div>
-							   </div>
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('index') }}">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('about_us') }}">About Us</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('case') }}">Portfolio</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('service') }}">Services</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('blog') }}">Blog</a>
+									</li>
+								</ul>
+								<div class="right-wiget md-mt-30 d-flex align-items-center order-lg-3 d-lg-none">
+									<div class="">
+										<a class="custom-btn-one position-relative" href="{{ url_for('contact') }}">Contact Us</a>
+									</div>
+								</div>
+							</div>
+
 						    </nav>
 						</div>
 							<!-- //header nav  -->
@@ -153,15 +152,17 @@
                             <h3 class="h3 mb-30 fw-700 position-relative">5 reasons why your business needs a website</h3>
 							<div class="d-flex align-items-center justify-content-center">
 								<div class="name">
-									<img src="images/blog/blog_14.png" alt="">
+									<img src="{{ url_for('static', filename='images/blog/blog_14.png') }}" alt="">
 									<span class="pl-10 fs-14 fw-400">David Uji</span>
 								</div>
 								<div class="divider"></div>
 								<div class="data">
-									<img src="images/icon/calendar.svg" alt="" class="">
+									<img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="" class="">
 									<span class="pl-10 fs-14 fw-400">20 September 2022</span>
-									<img src="images/icon/comment.svg" alt="" class="pl-10">
-									<span class="pl-10 fs-14 fw-400">0 Comment</span>
+									<img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
+									<span class="pl-10 fs-14 fw-400">
+										{{ comments|length }} Comment{{ '' if comments|length == 1 else 's' }}
+									</span>
 								</div>						
 							</div>
                         </div>
@@ -176,7 +177,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-8">
-								<div class="card"><img src="images/blog/blog_15.png" alt=""></div>
+								<div class="card"><img src="{{ url_for('static', filename='images/blog/blog_15.png') }}" alt=""></div>
 								<div class="main_left">
 									<div class="left-one mb-40 position-relative">
 										<div class="mb-40">
@@ -247,7 +248,7 @@
 											<p class="">
 												<a href="https://www.google.com/amp/s/www.forbes.com/sites/theyec/2020/02/03/why-every-business-needs-a-website/amp/">Websites have become essential to business today</a>. I strongly recommend creating one if you haven’t done so already. You can 
 												improve it over time but the key is to start. A responsive website design backed by a solid strategy is imperative. It is the
-												basis of your online marketing activity. Contact <a href="contact.html">Gain Infinity</a> today to build you website that attracts visitors and converts 
+												basis of your online marketing activity. Contact <a href="{{ url_for('contact') }}">Gain Infinity</a> today to build you website that attracts visitors and converts 
 												them to customers.
 											</p>
 										</div>
@@ -274,45 +275,59 @@
 										<div class="border"></div>
 									</div>
 									<div class="left-three d-flex">
-										<div class=""><img src="images/blog/blog_16.png" alt="" class="rounded"></div>
+										<div class=""><img src="{{ url_for('static', filename='images/blog/blog_16.png') }}" alt="" class="rounded"></div>
 										<div class="pl-40">
 											<h6 class="mb-10">David Uji</h6>
 											<span class="">Author</span>
 										</div>
 
 									</div>
-									<h6 class="h6 fw-700 mt-40 mb-40">2 Comment</h6>
-									<div class="left-four d-flex mb-40">
-										<div class=""><img src="images/blog/blog_17.png" alt="" class="rounded"></div>
-										<div class="pl-20">
-											<h6 class="mb-10">Mahfuz Riad</h6>
-											<span class="">30 August 2023</span><span class="pl-20">7:50pm</span>
-											<p class="mt-20 mb-20">One touch of a red-hot stove is usually all we need to avoid that kind of discomfort in que usually all we need</p>
-										</div>
-										<div class=""><a href="">Reply</a></div>
-									</div>
-									<div class="border mb-40"></div>
-									<div class="left-four d-flex mb-40">
-										<div class=""><img src="images/blog/blog_18.png" alt="" class="rounded"></div>
-										<div class="pl-20">
-											<h6 class="mb-10">Mahfuz Riad</h6>
-											<span class="">30 August 2023</span><span class="pl-20">7:50pm</span>
-											<p class="mt-20 mb-20">One touch of a red-hot stove is usually all we need to avoid that kind of discomfort in que usually all we need</p>
-										</div>
-										<div class=""><a href="">Reply</a></div>
-									</div>
-									<div class="border"></div>
-									<h6 class="h6 fw-700 mt-40 mb-40">Leave A Comment</h6>
 									<div class="left-five">
-										<form>
-											<input type="text" placeholder="Name*">
-											<div class="border mt-20 mb-40"></div>
-											<input type="text" placeholder="Email*">
-											<div class="border mt-20 mb-40"></div>
-											<input type="text" placeholder="Comment">
-											<div class="border mt-50 mb-40"></div>
+										<!-- Comment Form -->
+										<h6 class="h6 fw-700 mt-40 mb-20">Leave a Comment</h6>
+										<form action="{{ url_for('add_comment') }}" method="POST" class="mb-40">
+											<input type="hidden" name="post_id" value="{{ post_id }}">
+											<div class="mb-20">
+												<input type="text" name="name" placeholder="Name*" required class="form-control">
+											</div>
+											<div class="mb-20">
+												<input type="email" name="email" placeholder="Email*" required class="form-control">
+											</div>
+											<div class="mb-20">
+												<textarea name="comment" placeholder="Comment*" required class="form-control"></textarea>
+											</div>
+											<button type="submit" class="custom-btn-one">Submit Comment</button>
 										</form>
-										<div class=""><a href="" class="custom-btn-one">Submit a Comment</a></div>
+
+										<!-- Display Existing Comments -->
+										<h6 class="h6 fw-700 mt-40 mb-40">{{ comments|length }} Comment{{ '' if comments|length == 1 else 's' }}</h6>
+
+										{% for c in comments %}
+									<div class="left-four d-flex justify-content-between align-items-start mb-20">
+										<!-- Avatar -->
+										<div class="d-flex">
+											<div>
+												<img src="{{ url_for('static', filename='images/blog/blog_17.png') }}" alt="" class="rounded">
+											</div>
+
+											<!-- Comment Content -->
+											<div class="pl-20">
+												<h6 class="mb-5">{{ c.name }}</h6>
+												<span>{{ c.created_at.strftime('%d %B %Y') if c.created_at else '' }}</span>
+												<p class="mt-10 mb-0">{{ c.comment }}</p>
+											</div>
+										</div>
+
+										<!-- Reply button on the far right -->
+										<div class="ml-auto">
+											<a href="#" class="reply-btn">Reply</a>
+										</div>
+									</div>
+
+									<!-- Line right below comment with no big gap -->
+									<div class="border mb-20"></div>
+									{% endfor %}
+
 									</div>
 									<div class="left-six d-flex align-items-center mt-30">
 										<input type="checkbox">
@@ -324,7 +339,7 @@
 								<div class="right-blog">
 									<div class="blog-search mb-40">
 										<form class="search-form position-relative d-flex align-items-center">
-											<a href=""><img src="images/icon/search-02.svg" alt=""></a>
+											<a href=""><img src="{{ url_for('static', filename='images/icon/search-02.svg') }}" alt=""></a>
 											<input type="text" placeholder="Search">
 										</form>
 									</div>
@@ -338,48 +353,51 @@
 									</div>
 									<div class="blog-post mb-40">
 										<h6 class="h6 fw-700">Latest Post:</h6>
-										<div class="post-one mb-30 d-flex align-items-center">
-											<div class=""><img src="images/blog/blog_11.png" alt=""></div>
-											<div class="">
-												<p class="mb-10">22 Sept. 2022</p>
-												<h6 class=""><a href="blog-details.html">Branding, Starts with the People Close to You</a></h6>
+													<div class="post-one mb-30 d-flex align-items-center">
+														<!-- Updated image path -->
+														<div class=""><img src="{{ url_for('static', filename='images/blog/blog_11.png') }}" alt=""></div>
+														<div class="">
+															<p class="mb-10">22 Sept. 2022</p>
+															<h6 class=""><a href="{{ url_for('branding_starts_with_the_people_close_to_you') }}">Branding, Starts with the People Close to You</a></h6>
+														</div>
+													</div>
+													<div class="post-one mb-30 d-flex align-items-center">
+														<!-- Updated image path -->
+														<div class=""><img src="{{ url_for('static', filename='images/blog/blog_12.png') }}" alt=""></div>
+														<div class="">
+															<p class="mb-10">22 Sept. 2022</p>
+															<h6 class=""><a href="{{ url_for('reasons_why_your_business_needs_a_website') }}">5 reasons why your business needs a website</a></h6>
+														</div>
+													</div>
+													<div class="post-one mb-30 d-flex align-items-center">
+														<!-- Updated image path -->
+														<div class=""><img src="{{ url_for('static', filename='images/blog/blog_13.png') }}" alt=""></div>
+														<div class="">
+															<p class="mb-10">20 Sept. 2022</p>
+															<h6 class=""><a href="{{ url_for('marketing_strategies') }}">5 marketing strategies to fuel your business growth</a></h6>
+														</div>
+													</div>
+												</div>
+												<div class="blog-taq">
+													<h6 class="h6 fw-700 mb-30">Tags:</h6>
+													<div class="tag_one">
+														<a href="#" class="">Brand</a>
+														<a href="#" class="">Brand Identity</a>
+														<a href="#" class="">Branding</a>
+														<a href="#" class="">Business</a>
+														<a href="#" class="">Business Growth</a>
+														<a href="#" class="">Consumer</a>
+														<a href="#" class="">Design</a>
+														<a href="#" class="">Ecommerce</a>
+														<a href="#" class="">Keyword</a>
+														<a href="#" class="">Logo</a>
+														<a href="#" class="">Marketing</a>
+														<a href="#" class="">SEO</a>
+														<a href="#" class="">Website</a>
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="post-one mb-30 d-flex align-items-center">
-											<div class=""><img src="images/blog/blog_12.png" alt=""></div>
-											<div class="">
-												<p class="mb-10">22 Sept. 2022</p>
-												<h6 class=""><a href="blog-details.html">5 reasons why your business needs a website</a></h6>
-											</div>
-										</div>
-										<div class="post-one mb-30 d-flex align-items-center">
-											<div class=""><img src="images/blog/blog_13.png" alt=""></div>
-											<div class="">
-												<p class="mb-10">20 Sept. 2022</p>
-												<h6 class=""><a href="blog-details.html">5 marketing strategies to fuel your business growth</a></h6>
-											</div>
-										</div>
-									</div>
-									<div class="blog-taq">
-										<h6 class="h6 fw-700 mb-30">Tags:</h6>
-										<div class="tag_one">
-											<a href="#" class="">Brand</a>
-											<a href="#" class="">Brand Identity</a>
-											<a href="#" class="">Branding</a>
-											<a href="#" class="">Buisness</a>
-											<a href="#" class="">Business Growth</a>
-											<a href="#" class="">Consumer</a>
-											<a href="#" class="">Design</a>
-											<a href="#" class="">Ecommerce</a>
-											<a href="#" class="">Keyword</a>
-											<a href="#" class="">Logo</a>
-											<a href="#" class="">Marketing</a>
-											<a href="#" class="">SEO</a>
-											<a href="#" class="">Website</a>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -394,10 +412,10 @@
 						<div class="row text-center text-lg-start">
 						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-start">
 							<div class="footer_logo ms-lg-0 ms-2">
-							<a href=""><img src="images/logo/logo.png" alt="" class="img-fluid"></a>
+							<a href=""><img src="{{ url_for('static', filename='images/logo/logo.png') }}" alt="Logo"  class="img-fluid"></a>
 							</div>
 						</div>
-						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-start">
+						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-center">
 							<div>
 							<p class="mb-1 fw-bold">Phone</p>
 							<p class="mb-0">+234 (0)70 4735 0000</p>
@@ -452,42 +470,35 @@
 				</div>
 				</footer>
 			<div id="whatsapp-float">
-			<a href="https://wa.me/message/5GWZXWOCERUWH1" target="_blank" rel="noopener" class="wa-link">
-				<div class="wa-bubble">
-				<img src="images/icon/whatsapp.png" alt="WhatsApp" class="wa-icon" />
-				<span class="wa-text">Let's talk</span>
-				</div>
-			</a>
+				<a href="https://wa.me/message/5GWZXWOCERUWH1" target="_blank" rel="noopener" class="wa-link">
+					<div class="wa-bubble">
+						<img src="{{ url_for('static', filename='images/icon/whatsapp.png') }}" alt="WhatsApp" class="wa-icon" />
+						<span class="wa-text">Let's talk</span>
+					</div>
+				</a>
 			</div>
+
 			<!-- ============================== Footer end    ============================ -->
 			<button class="scroll-top">
 				<i class="bi bi-arrow-up-short"></i>
 			</button>
 
-			<!-- Optional JavaScript   -->
-			<!-- jQuery first, then Bootstrap JS -->
-			<!-- jQuery -->
-			<script src="vendor/jquery.min.js"></script>
-			<!-- Bootstrap JS -->
-			<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-			<!-- circle progress bar -->
-			<script src="vendor/circle-progress.min.js"></script>
-			<!-- Slick Slider -->
-			<script src="vendor/slick/slick.min.js"></script>
-			<!-- js Counter -->
-			<script src="vendor/jquery.counterup.min.js"></script>
-			<!-- jquery.sidebar.min.js -->
-			<script src="vendor/jquery.sidebar.min.js"></script>
-			<!-- waypoints  -->
-			<script src="vendor/jquery.waypoints.min.js"></script>
-			<!-- jquery.magnific-popup.min.js -->
-			<script src="js/jquery.magnific-popup.min.js"></script>
-			<!-- Nice Select -->
-			<script src="vendor/nice-select/jquery.nice-select.min.js"></script>
-			<!-- wow js -->
-			<script src="vendor/wow.min.js"></script>
-			<!-- Theme js -->
-			<script src="js/theme.js"></script>
+
+		<!-- Optional JavaScript   -->
+
+    	<!-- jQuery first, then Bootstrap JS -->
+    	<!-- jQuery -->
+		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/circle-progress.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.sidebar.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/nice-select/jquery.nice-select.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/wow.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 		</div> <!-- /.main-page-wrapper -->
 	</body>
 		<script>

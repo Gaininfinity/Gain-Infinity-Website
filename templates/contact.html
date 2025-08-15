@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="keywords" content="IT, Technology, online business, Ecommerce, Digital Marketing">
-		<meta name="description" content="Gain Infinity - Hosting Service Template for all kinds of IT, Technology, online bussines, Ecommerce, Website, Digital Marketing">
+		<meta name="description" content="Gain Infinity - Hosting Service for all kinds of IT, Technology, online business, Ecommerce, Digital Marketing">
       	<meta property="site_name" content="Gain Infinity">
       	<meta property="type" content="website">
       	<meta property="title" content="Gain Infinity - Digital Marketing">
@@ -18,20 +18,13 @@
 		<meta name="msapplication-navbutton-color" content="#6dbfb8">
 		<!-- iOS Safari -->
 		<meta name="apple-mobile-web-app-status-bar-style" content="#6dbfb8">
-		<title>Gain Infinity - Contact Us</title>
+		<title>Gain Infinity - Digital Marketing Agency</title>
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" sizes="72x33" href="images/fabicon.png">
 		<!-- Main style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" media="all">
 		<!-- responsive style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
-
-		<!-- Fix Internet Explorer ______________________________________-->
-		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-			<script src="vendor/html5shiv.js"></script>
-			<script src="vendor/respond.js"></script>
-		<![endif]-->	
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}" media="all">
 	</head>
 
 	<body>
@@ -39,25 +32,22 @@
 			<!-- ===================================================
 				Loading Transition
 			==================================================== -->
-
 			<div id="preloader">
-				<div id="andeo-preloader" class="andeo-preloader">
+				<div id="preloader" class="preloader">
 					<div class="animation-preloader">
 					  <h1>GAIN INFINITY</h1>
 					</div>	
 				</div>
 			</div>
-
 			<!--=========================header html start  1=================================  -->
-
 			<div class="theme-main-menu sticky-menu theme-menu-one theme-menu-two tran5s wow fadeInUp">
 				<div class="inner-content">
 					<div class="d-flex align-items-center justify-content-between">
-						<div class="d-flex logo order-lg-0"><a href="" class="d-block"><img src="images/logo/logo.png" alt=""></a></div>
+						<div class="d-flex logo order-lg-0"><a href="" class="d-block"><img src="{{ url_for('static', filename='images/logo/logo.png') }}" alt=""></a></div>
 						<div class="right-wiget ms-auto d-lg-flex align-items-center justify-content-center order-lg-3 ">
-							 <div class="search-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><a href="#"><img src="images/icon/search.svg" alt=""></a></div>
-							 <div class="grid-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><a href="#"><img src="images/icon/grid.svg" alt=""></a></div>
-							<div class=""><a class="custom-btn-one" href="contact.html">Contact Us</a></div>
+							 <div class="search-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><a href="#"><img src="{{ url_for('static', filename='images/icon/search.svg') }}" alt=""></a></div>
+							 <div class="grid-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><a href="#"><img src="{{ url_for('static', filename='images/icon/grid.svg') }}" alt=""></a></div>
+							<div class=""><a class="custom-btn-one" href="{{ url_for ('contact') }}">Contact Us</a></div>
 						</div>
 						 <!-- ================================================
 						                      nav bar start
@@ -68,27 +58,30 @@
 								<span></span>
 							  </button>
 							  <div class="collapse navbar-collapse" id="navbarNav">
-									<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-										<li class="nav-item">
-											<a class="nav-link" href="index.html">Home</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="about-us.html">About Us</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="case.html">Portfolio</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="service.html">Services</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="blog.html" >Blog</a>
-										</li>
-									</ul>
-								    <div class="right-wiget md-mt-30 d-flex align-items-center order-lg-3 d-lg-none ">
-									   <div class=""><a class="custom-btn-one position-relative" href="contact.html">Contact Us</a></div>
-								    </div>
-							   </div>
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('index') }}">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('about_us') }}">About Us</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('case') }}">Portfolio</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('service') }}">Services</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('blog') }}">Blog</a>
+									</li>
+								</ul>
+								<div class="right-wiget md-mt-30 d-flex align-items-center order-lg-3 d-lg-none">
+									<div class="">
+										<a class="custom-btn-one position-relative" href="{{ url_for('contact') }}">Contact Us</a>
+									</div>
+								</div>
+							</div>
+
 						    </nav>
 						</div>
 							<!-- //header nav  -->
@@ -98,6 +91,7 @@
 					</div>
 			    </div>
 			</div>
+
 
 			<!-- =======================header html end===================================== -->
 
@@ -152,7 +146,7 @@
             <!-- ==========================aside start ==================================================-->
 
 			<!--================================banner section start ===========================  -->
-            <div class="banner-about md-pt-50 tran5s wow fadeInUp" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url('images/banner/banner-03.png') center center no-repeat;">
+            <div class="banner-about md-pt-50 tran5s wow fadeInUp" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url('{{ url_for('static', filename='images/bg/bg-03.jpg') }}') center center no-repeat;">
                 <div class="container pt-286 pb-170 md-pt-150 md-pb-90">
                     <div class="row d-flex align-items-center">
                         <div class="text-center">
@@ -180,33 +174,41 @@
                                 </div>
                             </div>
                             <div class="my-form position-relative">
-                                <form>
+                                <!-- <form action="/contact" method="POST">
                                     <div class="row g-lg-4 ms-auto">
                                         <div class="col-lg-6 mb-60 position-relative">
-                                            <input class="input-one" type="text" name="name">
+                                            <input class="input-one" type="text" name="first_name">
                                             <span class="input-one-text" data-placeholder="First Name*"></span>
                                         </div>
                                         <div class="col-lg-6 mb-60 position-relative">
-                                            <input class="input-one" type="text" name="name">
+                                            <input class="input-one" type="text" name="last_name">
                                             <span class="input-one-text" data-placeholder="Last Name*"></span>
                                         </div>
                                         <div class="col-lg-6 mb-60 position-relative">
-                                            <input class="input-one" type="text" name="name">
+                                            <input class="input-one" type="text" name="email">
                                             <span class="input-one-text" data-placeholder="Your Email*"></span>
                                         </div>
                                         <div class="col-lg-6 mb-60 position-relative">
-                                            <input class="input-one" type="text" name="name">
+                                            <input class="input-one" type="text" name="subject">
                                             <span class="input-one-text" data-placeholder="Subject"></span>
                                         </div>
                                         <div class="col-lg-12 mb-60 position-relative">
-                                            <input class="input-two" type="text" name="name">
-                                            <span class="input-two-text" data-placeholder="Subject"></span>
+                                            <input class="input-two" type="text" name="message">
+                                            <span class="input-two-text" data-placeholder="Message"></span>
                                         </div>
                                     </div>
-                                    <div class="sent-massage">
-                                        <a href="" class="custom-btn-one">Send a message</a>
+                                    <div class="sent-message">
+                                        <button type="submit" class="custom-btn-one">Send a message</button>
                                     </div>
-                                </form>
+                                </form> -->
+								<div class="whatsapp-form-container" style="position: relative; padding-top: 56.25%; height: 0; overflow: hidden;">
+									<iframe 
+										src="https://whatsform.com/LFsgMN" 
+										style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+										loading="lazy"
+										title="WhatsApp Contact Form">
+									</iframe>
+								</div>
                             </div>
                         </div>
                     </section>
@@ -236,6 +238,8 @@
             </div>
 
 			<!--================================ Footer start ===========================  -->
+
+			<!--================================ Footer start ===========================  -->
 			<footer class="footer tran5s wow fadeInUp">
 				<div class="footer_wapper pt-40 md-pt-20 pb-10">
 					<div class="container">
@@ -243,10 +247,10 @@
 						<div class="row text-center text-lg-start">
 						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-start">
 							<div class="footer_logo ms-lg-0 ms-2">
-							<a href=""><img src="images/logo/logo.png" alt="" class="img-fluid"></a>
+							<a href=""><img src="{{ url_for('static', filename='images/logo/logo.png') }}" alt="Logo"  class="img-fluid"></a>
 							</div>
 						</div>
-						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-start">
+						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-center">
 							<div>
 							<p class="mb-1 fw-bold">Phone</p>
 							<p class="mb-0">+234 (0)70 4735 0000</p>
@@ -301,42 +305,35 @@
 				</div>
 				</footer>
 			<div id="whatsapp-float">
-			<a href="https://wa.me/message/5GWZXWOCERUWH1" target="_blank" rel="noopener" class="wa-link">
-				<div class="wa-bubble">
-				<img src="images/icon/whatsapp.png" alt="WhatsApp" class="wa-icon" />
-				<span class="wa-text">Let's talk</span>
-				</div>
-			</a>
+				<a href="https://wa.me/message/5GWZXWOCERUWH1" target="_blank" rel="noopener" class="wa-link">
+					<div class="wa-bubble">
+						<img src="{{ url_for('static', filename='images/icon/whatsapp.png') }}" alt="WhatsApp" class="wa-icon" />
+						<span class="wa-text">Let's talk</span>
+					</div>
+				</a>
 			</div>
+
 			<!-- ============================== Footer end    ============================ -->
 			<button class="scroll-top">
 				<i class="bi bi-arrow-up-short"></i>
 			</button>
 
-			<!-- Optional JavaScript   -->
-			<!-- jQuery first, then Bootstrap JS -->
-			<!-- jQuery -->
-			<script src="vendor/jquery.min.js"></script>
-			<!-- Bootstrap JS -->
-			<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-			<!-- circle progress bar -->
-			<script src="vendor/circle-progress.min.js"></script>
-			<!-- Slick Slider -->
-			<script src="vendor/slick/slick.min.js"></script>
-			<!-- js Counter -->
-			<script src="vendor/jquery.counterup.min.js"></script>
-			<!-- jquery.sidebar.min.js -->
-			<script src="vendor/jquery.sidebar.min.js"></script>
-			<!-- waypoints  -->
-			<script src="vendor/jquery.waypoints.min.js"></script>
-			<!-- jquery.magnific-popup.min.js -->
-			<script src="js/jquery.magnific-popup.min.js"></script>
-			<!-- Nice Select -->
-			<script src="vendor/nice-select/jquery.nice-select.min.js"></script>
-			<!-- wow js -->
-			<script src="vendor/wow.min.js"></script>
-			<!-- Theme js -->
-			<script src="js/theme.js"></script>
+
+		<!-- Optional JavaScript   -->
+
+    	<!-- jQuery first, then Bootstrap JS -->
+    	<!-- jQuery -->
+		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/circle-progress.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.sidebar.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/nice-select/jquery.nice-select.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/wow.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 		</div> <!-- /.main-page-wrapper -->
 	</body>
 		<script>

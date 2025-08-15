@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="keywords" content="IT, Technology, online business, Ecommerce, Digital Marketing">
-		<meta name="description" content="Gain Infinity - Hosting Template Service for all kinds of IT, Technology, online business, Ecommerce, Website, Digital Marketing">
+		<meta name="description" content="Gain Infinity - Hosting Service for all kinds of IT, Technology, online business, Ecommerce, Digital Marketing">
       	<meta property="site_name" content="Gain Infinity">
       	<meta property="type" content="website">
       	<meta property="title" content="Gain Infinity - Digital Marketing">
@@ -18,20 +18,13 @@
 		<meta name="msapplication-navbutton-color" content="#6dbfb8">
 		<!-- iOS Safari -->
 		<meta name="apple-mobile-web-app-status-bar-style" content="#6dbfb8">
-		<title>Gain Infinity - Case</title>
+		<title>Gain Infinity - Digital Marketing Agency</title>
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" sizes="72x33" href="images/fabicon.png">
 		<!-- Main style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" media="all">
 		<!-- responsive style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
-
-		<!-- Fix Internet Explorer ______________________________________-->
-		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-			<script src="vendor/html5shiv.js"></script>
-			<script src="vendor/respond.js"></script>
-		<![endif]-->	
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}" media="all">
 	</head>
 
 	<body>
@@ -39,25 +32,22 @@
 			<!-- ===================================================
 				Loading Transition
 			==================================================== -->
-
 			<div id="preloader">
-				<div id="andeo-preloader" class="andeo-preloader">
+				<div id="preloader" class="preloader">
 					<div class="animation-preloader">
 					  <h1>GAIN INFINITY</h1>
 					</div>	
 				</div>
 			</div>
-
 			<!--=========================header html start  1=================================  -->
-
 			<div class="theme-main-menu sticky-menu theme-menu-one theme-menu-two tran5s wow fadeInUp">
 				<div class="inner-content">
 					<div class="d-flex align-items-center justify-content-between">
-						<div class="d-flex logo order-lg-0"><a href="" class="d-block"><img src="images/logo/logo.png" alt=""></a></div>
+						<div class="d-flex logo order-lg-0"><a href="" class="d-block"><img src="{{ url_for('static', filename='images/logo/logo.png') }}" alt=""></a></div>
 						<div class="right-wiget ms-auto d-lg-flex align-items-center justify-content-center order-lg-3 ">
-							 <div class="search-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><a href="#"><img src="images/icon/search.svg" alt=""></a></div>
-							 <div class="grid-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><a href="#"><img src="images/icon/grid.svg" alt=""></a></div>
-							<div class=""><a class="custom-btn-one" href="contact.html">Contact Us</a></div>
+							 <div class="search-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><a href="#"><img src="{{ url_for('static', filename='images/icon/search.svg') }}" alt=""></a></div>
+							 <div class="grid-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><a href="#"><img src="{{ url_for('static', filename='images/icon/grid.svg') }}" alt=""></a></div>
+							<div class=""><a class="custom-btn-one" href="{{ url_for ('contact') }}">Contact Us</a></div>
 						</div>
 						 <!-- ================================================
 						                      nav bar start
@@ -68,27 +58,30 @@
 								<span></span>
 							  </button>
 							  <div class="collapse navbar-collapse" id="navbarNav">
-									<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-										<li class="nav-item">
-											<a class="nav-link" href="index.html">Home</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="about-us.html">About Us</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="case.html">Portfolio</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="service.html">Services</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="blog.html" >Blog</a>
-										</li>
-									</ul>
-								    <div class="right-wiget md-mt-30 d-flex align-items-center order-lg-3 d-lg-none ">
-									   <div class=""><a class="custom-btn-one position-relative" href="contact.html">Contact Us</a></div>
-								    </div>
-							   </div>
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('index') }}">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('about_us') }}">About Us</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('case') }}">Portfolio</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('service') }}">Services</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('blog') }}">Blog</a>
+									</li>
+								</ul>
+								<div class="right-wiget md-mt-30 d-flex align-items-center order-lg-3 d-lg-none">
+									<div class="">
+										<a class="custom-btn-one position-relative" href="{{ url_for('contact') }}">Contact Us</a>
+									</div>
+								</div>
+							</div>
+
 						    </nav>
 						</div>
 							<!-- //header nav  -->
@@ -117,12 +110,19 @@
 					</div>
 				</div>
 			</div>
-			<!-- RIGHT GRID  ASIDE -->
+
+			<!-- RIGHT GRID ASIDE -->
 			<div class="right-aside tran3s wow fadeInUp">
 				<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRight">
 					<div class="offcanvas-header">
-						<div class="d-flex logo order-lg-0"><a href="" class="d-block"><img src="images/logo/logo.png" alt=""></a></div>
-					  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-square-fill"></i></button>
+						<div class="d-flex logo order-lg-0">
+							<a href="{{ url_for('index') }}" class="d-block">
+								<img src="{{ url_for('static', filename='images/logo/logo.png') }}" alt="">
+							</a>
+						</div>
+						<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+							<i class="bi bi-x-square-fill"></i>
+						</button>
 					</div>
 					<div class="offcanvas-body">
 						<div class="info-widget">
@@ -136,7 +136,8 @@
 							<h6 class="color-two mb-20">Contact Us</h6>
 							<p>
 								<i class="bi bi-geo-alt"></i>
-								3739 Balboa Street, San Francisco, CA 94121</p>
+								3739 Balboa Street, San Francisco, CA 94121
+							</p>
 							<p>
 								<i class="bi bi-telephone"></i>
 								+0989 7876 9865 9
@@ -149,16 +150,17 @@
 					</div>
 				</div>
 			</div>
+
 			<!-- RIGHT GRID  ASIDE -->
             <!-- ==========================aside start ==================================================-->
 
 			<!--================================banner section start ===========================  -->
-            <div class="banner-about mb-100 md-mb-50 tran5s wow fadeInUp" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url('images/banner/banner-07.png') center center no-repeat;">
+            <div class="banner-about mb-100 md-mb-50 tran5s wow fadeInUp" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url({{url_for('static', filename='images/banner/banner-07.png')}}) center center no-repeat;">
                 <div class="container pt-286 pb-170 md-pt-150 md-pb-90">
                     <div class="row d-flex align-items-center">
                         <div class="text-center">
                             <h2 class="h2 mb-20 md-mb-10 position-relative">Our Case</h2>
-                            <p class=""><a href="index.html" class="">Home - Portfolio</a></p>
+                            <p class=""><a href="{{ url_for('index') }}" class="">Home - Portfolio</a></p>
                         </div>
                     </div>
                 </div>
@@ -166,94 +168,52 @@
 			<!--================================banner section end ===========================  -->
             <!--================================case study section start ===========================  -->
 		     <section class="case_study-_one mb-100 lg-mb-80 tran5s wow fadeInUp">
-				<div class="container-fluid">
-					<div class="case_study_rapper">
-						<div class="text-center mb-80 md-mb-50">
-							<div class=""><span class="span-two">NEW CASE STUDIES</span></div>
-							<div class=""><h4 class="h4 fw-700 position-relative">We Are Passionate About Our <br> Clients And Our Work.</h4></div>
-						</div>
-						<div class="row">
-							<div class="col-lg-3 col-md-4">
-								<div class="case-one mb-30 md-mb-30 position-relative">
-									<a href="images/case/case_01.png" class="view_pic"><img src="images/case/case_01.png" alt="" class=""></a>
-									<div class="shapes hover-box">
-										<span class="span-two">Strategy</span>
-										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
-									</div>
-								</div>
-                                <div class="case-one md-mb-30 position-relative">
-									<a href="images/case/case_11.png" class="view_pic"><img src="images/case/case_11.png" alt="" class=""></a>
-									<div class="shapes hover-box">
-										<span class="span-two">Strategy</span>
-										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-4">
-								<div class="case-one mb-30 md-mb-30 position-relative">
-									<a href="images/case/case_02.png" class="view_pic"><img src="images/case/case_02.png" alt="" class=""></a>
-									<div class="shapes hover-box">
-										<span class="span-two">Strategy</span>
-										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
-									</div>
-								</div>
-                                <div class="case-one md-mb-30 position-relative">
-									<a href="images/case/case_12.png" class="view_pic"><img src="images/case/case_12.png" alt="" class=""></a>
-									<div class="shapes hover-box">
-										<span class="span-two">Strategy</span>
-										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-4">
-								<div class="case-one mb-30 md-mb-30 position-relative">
-									<a href="images/case/case_03.png" class="view_pic"><img src="images/case/case_03.png" alt="" class=""></a>
-									<div class="shapes hover-box">
-										<span class="span-two">Strategy</span>
-										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
-									</div>
-								</div>
-                                <div class="case-one md-mb-30 position-relative">
-									<a href="images/case/case_13.png" class="view_pic"><img src="images/case/case_13.png" alt="" class=""></a>
-									<div class="shapes hover-box">
-										<span class="span-two">Strategy</span>
-										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-4">
-								<div class="case-one mb-30 md-mb-30 position-relative">
-									<a href="images/case/case_04.png" class="view_pic"><img src="images/case/case_04.png" alt="" class=""></a>
-									<div class="shapes hover-box">
-										<span class="span-two">Strategy</span>
-										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
-									</div>
-								</div>
-                                <div class="case-one  md-mb-30 position-relative">
-									<a href="images/case/case_14.png" class="view_pic"><img src="images/case/case_14.png" alt="" class=""></a>
-									<div class="shapes hover-box">
-										<span class="span-two">Strategy</span>
-										<h6 class="h6"><a href="case-details.html" class="">Digital Experience Development Case</a></h6>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			 </section>	
-			<!--================================case study section end ===========================  -->
-
-			<!--================================about section start ===========================  -->
-			<section class="about-three mb-90 md-mb-50 position-relative tran5s wow fadeInUp">
-				<div class="container">
-					<div class="row d-flex align-items-center justify-content-center">
-                        <div class="text-rapper text-center">
-                            <h4 class="mb-30">An agency like no other. Results to match.</h4>
-                            <p>We work with forward-thinking companies to craft and produce impactful solutions through website & mobile app experiences.You will work closely with skilled Dolor in reprehenderit in voluptate velit esse cillum</p>
+    <div class="container-fluid">
+        <div class="case_study_rapper">
+            <div class="text-center mb-80 md-mb-50">
+                <div class=""><span class="span-two">NEW CASE STUDIES</span></div>
+                <div class=""><h4 class="h4 fw-700 position-relative">We Are Passionate About Our <br> Clients And Our Work.</h4></div>
+            </div>
+            <div class="row">
+                {% for i in range(1, 5) %}
+                <div class="col-lg-3 col-md-4">
+                    {% for j in [i, i + 10] %}
+                    <div class="case-one mb-30 md-mb-30 position-relative">
+                        <a href="{{ url_for('static', filename='images/case/case_0' ~ j ~ '.png') }}" class="view_pic">
+                            <img src="{{ url_for('static', filename='images/case/case_0' ~ j ~ '.png') }}" alt="">
+                        </a>
+                        <div class="shapes hover-box">
+                            <span class="span-two">Strategy</span>
+                            <h6 class="h6">
+                                <a href="{{ url_for('case_details') }}" class="">Digital Experience Development Case</a>
+                            </h6>
                         </div>
-					</div>
-				</div>
-			</section>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--================================case study section end ===========================  -->
+
+<!--================================about section start ===========================  -->
+<section class="about-three mb-90 md-mb-50 position-relative tran5s wow fadeInUp">
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="text-rapper text-center">
+                <h4 class="mb-30">An agency like no other. Results to match.</h4>
+                <p>
+                    We work with forward-thinking companies to craft and produce impactful solutions through website & mobile app experiences.
+                    You will work closely with skilled Dolor in reprehenderit in voluptate velit esse cillum
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 			<!--================================about section end ===========================  -->
 
 			<!--================================work history start ===========================  -->
@@ -288,7 +248,7 @@
 			</section>
 			<!--================================work history end ===========================  -->
 
-			<!--================================ Footer start ===========================  -->
+<!--================================ Footer start ===========================  -->
 			<footer class="footer tran5s wow fadeInUp">
 				<div class="footer_wapper pt-40 md-pt-20 pb-10">
 					<div class="container">
@@ -296,10 +256,10 @@
 						<div class="row text-center text-lg-start">
 						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-start">
 							<div class="footer_logo ms-lg-0 ms-2">
-							<a href=""><img src="images/logo/logo.png" alt="" class="img-fluid"></a>
+							<a href=""><img src="{{ url_for('static', filename='images/logo/logo.png') }}" alt="Logo"  class="img-fluid"></a>
 							</div>
 						</div>
-						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-start">
+						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-center">
 							<div>
 							<p class="mb-1 fw-bold">Phone</p>
 							<p class="mb-0">+234 (0)70 4735 0000</p>
@@ -354,42 +314,35 @@
 				</div>
 				</footer>
 			<div id="whatsapp-float">
-			<a href="https://wa.me/message/5GWZXWOCERUWH1" target="_blank" rel="noopener" class="wa-link">
-				<div class="wa-bubble">
-				<img src="images/icon/whatsapp.png" alt="WhatsApp" class="wa-icon" />
-				<span class="wa-text">Let's talk</span>
-				</div>
-			</a>
+				<a href="https://wa.me/message/5GWZXWOCERUWH1" target="_blank" rel="noopener" class="wa-link">
+					<div class="wa-bubble">
+						<img src="{{ url_for('static', filename='images/icon/whatsapp.png') }}" alt="WhatsApp" class="wa-icon" />
+						<span class="wa-text">Let's talk</span>
+					</div>
+				</a>
 			</div>
+
 			<!-- ============================== Footer end    ============================ -->
 			<button class="scroll-top">
 				<i class="bi bi-arrow-up-short"></i>
 			</button>
 
-			<!-- Optional JavaScript   -->
-			<!-- jQuery first, then Bootstrap JS -->
-			<!-- jQuery -->
-			<script src="vendor/jquery.min.js"></script>
-			<!-- Bootstrap JS -->
-			<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-			<!-- circle progress bar -->
-			<script src="vendor/circle-progress.min.js"></script>
-			<!-- Slick Slider -->
-			<script src="vendor/slick/slick.min.js"></script>
-			<!-- js Counter -->
-			<script src="vendor/jquery.counterup.min.js"></script>
-			<!-- jquery.sidebar.min.js -->
-			<script src="vendor/jquery.sidebar.min.js"></script>
-			<!-- waypoints  -->
-			<script src="vendor/jquery.waypoints.min.js"></script>
-			<!-- jquery.magnific-popup.min.js -->
-			<script src="js/jquery.magnific-popup.min.js"></script>
-			<!-- Nice Select -->
-			<script src="vendor/nice-select/jquery.nice-select.min.js"></script>
-			<!-- wow js -->
-			<script src="vendor/wow.min.js"></script>
-			<!-- Theme js -->
-			<script src="js/theme.js"></script>
+
+		<!-- Optional JavaScript   -->
+
+    	<!-- jQuery first, then Bootstrap JS -->
+    	<!-- jQuery -->
+		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/circle-progress.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.sidebar.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/nice-select/jquery.nice-select.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/wow.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 		</div> <!-- /.main-page-wrapper -->
 	</body>
 		<script>
