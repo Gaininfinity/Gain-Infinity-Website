@@ -1,8 +1,6 @@
-from flask import Flask, render_template, redirect, request, jsonify, flash
+from flask import Flask, render_template, redirect, request, flash
 from flask_mysqldb import MySQL
 from datetime import datetime
-import urllib.parse
-import smtplib
 from email.mime.text import MIMEText
 
 app = Flask(__name__, template_folder="templates")
@@ -53,10 +51,6 @@ def blog():
     # Pass the comment counts to the template
     return render_template('blog.html', comment_counts=comment_counts)
 
-
-# @app.route('/marketing-strategies')
-# def marketing_strategies():
-#     return render_template('marketing-strategies.html')
 
 @app.route('/marketing-strategies')
 def marketing_strategies():

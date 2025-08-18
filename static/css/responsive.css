@@ -126,7 +126,20 @@
 .about-four{top: 0;}
 #isotop-gallery-wrapper .isotop-item .item-one{margin: 15px;}
 .item-one .hover-box {left: 10%;width: 222px;}
-
+.custom-btn-one {
+  color: white !important;   
+}
+.more-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #000;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 999px;
+  transition: background-color 0.4s ease;
+  text-decoration: none;
+}
 
 }
 
