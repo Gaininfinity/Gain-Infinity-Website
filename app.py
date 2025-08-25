@@ -2,14 +2,15 @@ from flask import Flask, render_template, redirect, request, flash
 from flask_mysqldb import MySQL
 from datetime import datetime
 from email.mime.text import MIMEText
-
+import os
 app = Flask(__name__, template_folder="templates")
 app.secret_key = "a_very_secret_and_random_string"
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '' 
-app.config['MYSQL_DB'] = 'gain_infinity_db'
+app.config['MYSQL_HOST'] = os.environ.get('MYSQLHOST', 'localhost')
+app.config['MYSQL_USER'] = os.environ.get('MYSQLUSER', 'root')
+app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQLPASSWORD', '')
+app.config['MYSQL_DB'] = os.environ.get('MYSQLDATABASE', 'gain_infinity_db')
+app.config['MYSQL_PORT'] = int(os.environ.get('MYSQLPORT', 3306))
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)
