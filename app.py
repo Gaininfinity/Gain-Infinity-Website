@@ -18,23 +18,6 @@ mysql = MySQL(app)
 # Main routes
 @app.route('/')
 def index():
-    return render_template('index.html')
-
-@app.route('/about-us')
-def about_us():
-    return render_template('about-us.html')
-
-@app.route('/case')
-def case():
-    return render_template('case.html')
-
-@app.route('/case-details')
-def case_details():
-    return render_template('case-details.html')
-
-
-@app.route('/blog')
-def blog():
     cur = mysql.connection.cursor()
 
     # Get comment counts for each post
@@ -46,11 +29,92 @@ def blog():
     comment_data = cur.fetchall()
     cur.close()
 
-    # Convert to dictionary for easy lookup: { post_id: count }
     comment_counts = {row['post_id']: row['comment_count'] for row in comment_data}
 
-    # Pass the comment counts to the template
+    return render_template('index.html', comment_counts=comment_counts)
+
+@app.route('/about-us')
+def about_us():
+    return render_template('about-us.html')
+
+@app.route('/case')
+def case():
+    return render_template('case.html')
+
+
+@app.route('/categories')
+def categories():
+    return render_template('categories.html')
+
+@app.route('/case-details')
+def case_details():
+    return render_template('case-details.html')
+
+
+@app.route('/blog')
+def blog():
+    cur = mysql.connection.cursor()
+
+    cur.execute("""
+        SELECT post_id, COUNT(*) as comment_count
+        FROM comments
+        GROUP BY post_id
+    """)
+    comment_data = cur.fetchall()
+    cur.close()
+
+    comment_counts = {row['post_id']: row['comment_count'] for row in comment_data}
+
     return render_template('blog.html', comment_counts=comment_counts)
+
+@app.route('/business')
+def business_category():
+    cur = mysql.connection.cursor()
+
+    cur.execute("""
+        SELECT post_id, COUNT(*) as comment_count
+        FROM comments
+        GROUP BY post_id
+    """)
+    comment_data = cur.fetchall()
+    cur.close()
+
+    comment_counts = {row['post_id']: row['comment_count'] for row in comment_data}
+
+    return render_template('business.html', comment_counts=comment_counts)
+
+
+@app.route('/marketing')
+def marketing_category():
+    cur = mysql.connection.cursor()
+
+    cur.execute("""
+        SELECT post_id, COUNT(*) as comment_count
+        FROM comments
+        GROUP BY post_id
+    """)
+    comment_data = cur.fetchall()
+    cur.close()
+
+    comment_counts = {row['post_id']: row['comment_count'] for row in comment_data}
+
+    return render_template('marketing.html', comment_counts=comment_counts)
+
+@app.route('/seo')
+def seo_category():
+    cur = mysql.connection.cursor()
+
+    cur.execute("""
+        SELECT post_id, COUNT(*) as comment_count
+        FROM comments
+        GROUP BY post_id
+    """)
+    comment_data = cur.fetchall()
+    cur.close()
+
+    comment_counts = {row['post_id']: row['comment_count'] for row in comment_data}
+
+    return render_template('seo.html', comment_counts=comment_counts)
 
 
 @app.route('/marketing-strategies')
@@ -125,13 +189,7 @@ def importance_of_business_branding():
     cur.close()
     return render_template('importance-of-business-branding.html', post_id=post_id, comments=comments)   
 
-@app.route('/marketing')
-def marketing():
-    return render_template('marketing.html')
-
-@app.route('/seo')
-def seo():
-    return render_template('seo.html')    
+   
 
 @app.route('/service')
 def service():
@@ -238,9 +296,5 @@ def add_comment():
     return redirect(request.referrer)
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(debug=True)

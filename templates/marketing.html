@@ -146,12 +146,12 @@
 
 			<!--================================banner section start ===========================  -->
 			<div class="banner-about tran5s wow fadeInUp" 
-				style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url('{{ url_for('static', filename='images/banner/banner-08.png') }}') center center no-repeat;">
+				style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url('{{ url_for('static', filename='images/banner/bgbanner.png') }}') center center no-repeat;">
 				<div class="container pt-286 pb-170 md-pt-150 md-pb-90">
 					<div class="row d-flex align-items-center">
 						<div class="text-center">
 							<h2 class="h2 mb-20 md-mb-10 position-relative">Category: Marketing</h2>
-							<p class=""><a href="{{ url_for('blog') }}" class="">Home - Blog</a></p>
+							<p class=""><a href="{{ url_for('index') }}" class="">Home - Blog</a></p>
 						</div>
 					</div>
 				</div>
@@ -163,12 +163,13 @@
 				<div class="blog-page-rapper pt-90 pb-90 md-pt-40 md-pb-40">
 					<div class="container">
 						<div class="row">
+							<div id="searchNotice" class="search-notice" aria-live="polite"></div>
 							<div class="col-lg-8">
-								<div class="left-blog">
+								<div class="left-blog" id="blogContent">
 									<div class="left-one sm-mb-40">
 										<div class="card">
     <!-- Blog featured image -->
-											<img src="{{ url_for('static', filename='images/blog/blog_10.png') }}" 
+											<img src="{{ url_for('static', filename='images/blog/brandinginfluence.png') }}" 
 												alt="Branding influence illustration"
 												class="card-img-top">
 											
@@ -184,13 +185,13 @@
 													<img src="{{ url_for('static', filename='images/icon/comment.svg') }}" 
 														alt="Comment count" 
 														class="comment-icon pl-10">
-													<span class="pl-10 fs-14 fw-400">0 Comment</span>
+													<span class="pl-10 fs-14 fw-400">{{ comment_counts.get(6, 0) }} Comment{{ '' if comment_counts.get(6, 0) == 1 else 's' }}</span>
 												</div>
 												
 												<!-- Blog title link -->
 												<div class="">
 													<h6 class="color-one pt-20 fw-700 lh-36">
-														<a href="{{ url_for('blog_post', slug='influence-of-branding-on-customers') }}">
+														<a href="{{ url_for('influence_of_branding_on_customers') }}">
 															Brand: Influence of branding on customers
 														</a>
 													</h6>
@@ -222,7 +223,7 @@
 									<div class="left-one sm-mb-40">
 										<div class="card">
 											<!-- Blog featured image -->
-											<img src="{{ url_for('static', filename='images/blog/blog_07.png') }}" 
+											<img src="{{ url_for('static', filename='images/blog/requirementofbranding.png') }}" 
 												alt="Business branding requirements illustration"
 												class="card-img-top">
 											
@@ -238,7 +239,7 @@
 													<img src="{{ url_for('static', filename='images/icon/comment.svg') }}" 
 														alt="Comment count" 
 														class="comment-icon pl-10">
-													<span class="pl-10 fs-14 fw-400">1 Comment</span>
+													<span class="pl-10 fs-14 fw-400">{{ comment_counts.get(7, 0) }} Comment{{ '' if comment_counts.get(7, 0) == 1 else 's' }}</span>
 												</div>
 												
 												<!-- Blog title link -->
@@ -279,25 +280,34 @@
 							<div class="col-lg-4">
 								<div class="right-blog pl-160">
 									<div class="blog-search mb-40">
-										<form class="search-form position-relative d-flex align-items-center">
-											<a href=""><img src="{{ url_for('static', filename='images/icon/search-02.svg') }}" alt=""></a>
-											<input type="text" placeholder="Search">
+										<form class="search-form position-relative d-flex align-items-center" onsubmit="event.preventDefault()">
+										<!-- Use a button instead of an <a href=""> so clicking won't reload -->
+										<button type="button" id="searchBtn" class="search-btn" aria-label="Search">
+											<img src="{{ url_for('static', filename='images/icon/search-02.svg') }}" alt="Search">
+										</button>
+
+										<input type="text" placeholder="Search" id="searchBox" aria-label="Search input">
 										</form>
 									</div>
 									<div class="blog-categ mb-30">
 										<h6 class="h6 fw-700 mb-30">Categories:</h6>
 										<ul>
-											<li class="d-flex align-items-center justify-content-between"><span class="">Business</span><span>(7)</span></li>
-											<li class="d-flex align-items-center justify-content-between"><span class="">Marketing</span><span>(2)</span></li>
-											<li class="d-flex align-items-center justify-content-between"><span class="">SEO</span><span>(1)</span></li>
-											<!--<li class="d-flex align-items-center justify-content-between"><span class="">Personal</span><span>(4)</span></li>-->
+											<li class="d-flex align-items-center justify-content-between">
+												<a href="{{url_for ('business_category')}}">Business</a><span>(7)</span>
+											</li>
+											<li class="d-flex align-items-center justify-content-between">
+												<a href="{{ url_for ('marketing_category')}}">Marketing</a><span>(2)</span>
+											</li>
+											<li class="d-flex align-items-center justify-content-between">
+												<a href="{{ url_for ('seo_category')}}">SEO</a><span>(1)</span>
+											</li>
 										</ul>
 									</div>
 									<div class="blog-post mb-40">
 										<h6 class="h6 fw-700">Latest Post:</h6>
 													<div class="post-one mb-30 d-flex align-items-center">
 														<!-- Updated image path -->
-														<div class=""><img src="{{ url_for('static', filename='images/blog/blog_11.png') }}" alt=""></div>
+														<!-- <div class=""><img src="{{ url_for('static', filename='images/blog/blog_11.png') }}" alt=""></div> -->
 														<div class="">
 															<p class="mb-10">22 Sept. 2022</p>
 															<h6 class=""><a href="{{ url_for('branding_starts_with_the_people_close_to_you') }}">Branding, Starts with the People Close to You</a></h6>
@@ -305,7 +315,7 @@
 													</div>
 													<div class="post-one mb-30 d-flex align-items-center">
 														<!-- Updated image path -->
-														<div class=""><img src="{{ url_for('static', filename='images/blog/blog_12.png') }}" alt=""></div>
+														<!-- <div class=""><img src="{{ url_for('static', filename='images/blog/blog_12.png') }}" alt=""></div> -->
 														<div class="">
 															<p class="mb-10">22 Sept. 2022</p>
 															<h6 class=""><a href="{{ url_for('reasons_why_your_business_needs_a_website') }}">5 reasons why your business needs a website</a></h6>
@@ -313,7 +323,7 @@
 													</div>
 													<div class="post-one mb-30 d-flex align-items-center">
 														<!-- Updated image path -->
-														<div class=""><img src="{{ url_for('static', filename='images/blog/blog_13.png') }}" alt=""></div>
+														<!-- <div class=""><img src="{{ url_for('static', filename='images/blog/blog_13.png') }}" alt=""></div> -->
 														<div class="">
 															<p class="mb-10">20 Sept. 2022</p>
 															<h6 class=""><a href="{{ url_for('marketing_strategies') }}">5 marketing strategies to fuel your business growth</a></h6>
@@ -457,6 +467,143 @@
 			collapseInstance.hide();
 			}
 		}
+		});
+		
+		document.addEventListener('DOMContentLoaded', function () {
+		const input = document.getElementById('searchBox');
+		const btn   = document.getElementById('searchBtn');      // may be null if you don't use a button
+		const content = document.getElementById('blogContent');
+		const tagLinks = Array.from(document.querySelectorAll('.tag_one a'));
+
+		// Make or reuse a notice area
+		let notice = document.getElementById('searchNotice');
+		if (!notice) {
+			const container = document.querySelector('.blog-search') || document.body;
+			notice = document.createElement('div');
+			notice.id = 'searchNotice';
+			notice.className = 'search-notice';
+			container.appendChild(notice);
+		}
+
+		if (!input || !content) {
+			console.error('Search: missing #searchBox or #blogContent');
+			return;
+		}
+
+		// helper to escape regex metachars
+		const escapeRegExp = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+		// Remove existing highlight spans and restore plain text (safe)
+		function removeHighlights(root) {
+			const spans = root.querySelectorAll('span.search-highlight');
+			spans.forEach(s => s.replaceWith(document.createTextNode(s.textContent)));
+			root.normalize();
+		}
+
+		// Highlight matches only in text nodes. Returns number of matches.
+		function highlightTextNodes(root, query) {
+			removeHighlights(root);
+			if (!query) return 0;
+			const re = new RegExp(escapeRegExp(query), 'gi');
+			let total = 0;
+
+			const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+			const textNodes = [];
+			while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+			textNodes.forEach(node => {
+			if (!node.nodeValue.trim()) return;
+			const matches = node.nodeValue.match(re);
+			if (!matches) return;
+			total += matches.length;
+
+			const frag = document.createDocumentFragment();
+			let lastIndex = 0;
+			// build the fragment by replacing occurrences
+			node.nodeValue.replace(re, (match, offset) => {
+				const before = node.nodeValue.slice(lastIndex, offset);
+				if (before) frag.appendChild(document.createTextNode(before));
+				const span = document.createElement('span');
+				span.className = 'search-highlight';
+				span.textContent = match;
+				frag.appendChild(span);
+				lastIndex = offset + match.length;
+			});
+			const after = node.nodeValue.slice(lastIndex);
+			if (after) frag.appendChild(document.createTextNode(after));
+			node.parentNode.replaceChild(frag, node);
+			});
+
+			return total;
+		}
+
+		// Update active tag visuals based on current query (exact match)
+		function updateActiveTag(q) {
+			const normalized = q ? q.trim().toLowerCase() : '';
+			tagLinks.forEach(a => {
+			const t = a.textContent.trim().toLowerCase();
+			if (normalized && t === normalized) {
+				a.classList.add('active');
+				a.setAttribute('aria-pressed', 'true');
+			} else {
+				a.classList.remove('active');
+				a.setAttribute('aria-pressed', 'false');
+			}
+			});
+		}
+
+		// Perform search using current input value
+		function doSearch() {
+			const q = input.value.trim();
+			const count = highlightTextNodes(content, q);
+			if (!q) notice.textContent = '';
+			else if (count === 0) notice.textContent = `No results for "${q}".`;
+			else notice.textContent = `${count} result${count > 1 ? 's' : ''} for "${q}".`;
+
+			updateActiveTag(q);
+
+			// scroll to first match if found
+			const first = content.querySelector('span.search-highlight');
+			if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}
+
+		// Click handler for the search icon (if present)
+		if (btn) {
+			btn.addEventListener('click', function (e) {
+			e.preventDefault();
+			doSearch();
+			input.focus();
+			});
+		}
+
+		// Enter/Escape handling on input
+		input.addEventListener('keydown', function (e) {
+			if (e.key === 'Enter') {
+			e.preventDefault();
+			doSearch();
+			} else if (e.key === 'Escape') {
+			input.value = '';
+			doSearch();
+			}
+		});
+
+		// Tag click behavior: set the input to tag text, run search and set active visual
+		tagLinks.forEach(a => {
+			a.addEventListener('click', function (e) {
+			e.preventDefault();                       // stop navigation to '#'
+			const q = this.textContent.trim();
+			input.value = q;
+			doSearch();
+			this.focus();                             // keyboard accessible
+			});
+		});
+
+		// Optional: if user types or clears input, update tags/state live
+		// input.addEventListener('input', function () {
+		// 	// optional debounce here if you have a lot of content
+		// 	doSearch();
+		// });
+
 		});
 		</script>
 </html>

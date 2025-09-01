@@ -129,6 +129,7 @@
 .custom-btn-one {
   color: white !important;   
 }
+.left-about img { margin-left: 0px;}
 .more-btn {
   display: inline-block;
   padding: 8px 20px;
@@ -164,7 +165,10 @@
     .right-choose .about-02{position: relative;}
     .right-choose .shape-07{left: 18%;}
     .choose-one .right-choose {width:100%; margin-left:0;}
-    .choose-one .right-choose .about-02 {max-width: 100%;}
+    .choose-one .right-choose .about-02 { position: relative;   
+    width: 100%;        
+    height: auto;         
+    max-width: 100%; }
     .blog-one-content .card .card-body h6 {font-size: 19px;}
     .blog-one-content .card {max-width: 370px;}
     .case-one::after{width: 100%;}
@@ -277,4 +281,3 @@
     .blog-page .left-blog .pagination a{width: 50px;line-height: 50px;}
     .main_left .left-one .quotetion p{padding: 0 10px;}
 }
-/*(max-width: 575px)*/

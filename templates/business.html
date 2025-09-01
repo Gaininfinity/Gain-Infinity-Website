@@ -148,7 +148,7 @@
                 <div class="container pt-286 pb-170 md-pt-150 md-pb-90">
                     <div class="row d-flex align-items-center">
                         <div class="text-center">
-                            <h2 class="h2 mb-20 md-mb-10 position-relative">Category: SEO</h2>
+                            <h2 class="h2 mb-20 md-mb-10 position-relative">Category: Business</h2>
                             <p class=""><a href="{{url_for('index')}}" class="">Home - Blog</a></p>
                         </div>
                     </div>
@@ -161,43 +161,266 @@
 				<div class="blog-page-rapper pt-90 pb-90 md-pt-40 md-pb-40">
 					<div class="container">
 						<div class="row">
-							<div id="searchNotice" class="search-notice" aria-live="polite"></div>
-							<div class="col-lg-8">
-								<div class="left-blog", id="blogContent">
-									<div class="left-one mb-40">
+                            <div id="searchNotice" class="search-notice" aria-live="polite"></div>
+                             <div class="col-lg-8">
+                                <div class="left-blog" id="blogContent">
+
+                                    <!-- First blog post -->
+                                    <div class="left-one mb-40">
+                                        <div class="card">
+                                            <img src="{{ url_for('static', filename='images/blog/marketingstrategies.png') }}" alt="">
+                                            <div class="card-body">
+                                                <div class="pt-20">
+                                                    <img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="">
+                                                    <span class="pl-10 fs-14 fw-400">22 Sept. 2022</span>
+                                                    <img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
+                                                    <span class="pl-10 fs-14 fw-400">
+                                                        {{ comment_counts.get(1, 0) }} Comment{{ '' if comment_counts.get(1, 0) == 1 else 's' }}
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <h6 class="color-one pt-20 fw-700 lh-36">
+                                                        <a href="{{ url_for('marketing_strategies') }}">5 marketing strategies to fuel your business growth</a>
+                                                    </h6>
+                                                </div>
+                                                <div>
+                                                    <p class="pt-20 fs-17 pb-20">
+                                                        Marketing strategies are a set of plans and methods which are aimed at achieving a high level of returns in the business with a limited allocation of resources. It...
+                                                    </p>
+                                                </div>
+                                                <div class="sm-mb-20">
+                                                    <ul class="d-flex align-items-center">
+                                                        <li>
+                                                            <a href="{{ url_for('marketing_strategies') }}">
+                                                                Continue Reading <i class="bi bi-chevron-right"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Second blog post -->
+                                    <div class="left-one mb-40">
+                                        <div class="card">
+                                            <img src="{{ url_for('static', filename='images/blog/brandingwithpeopleclosetoyou.png') }}" alt="">
+                                            <div class="card-body">
+                                                <div class="pt-20">
+                                                    <img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="">
+                                                    <span class="pl-10 fs-14 fw-400">22 Sept. 2022</span>
+                                                    <img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
+                                                    <span class="pl-10 fs-14 fw-400">{{ comment_counts.get(2, 0) }} Comment{{ '' if comment_counts.get(2, 0) == 1 else 's' }}</span>
+                                                </div>
+                                                <div>
+                                                    <h6 class="color-one pt-20 fw-700 lh-36">
+                                                        <a href="{{ url_for('branding_starts_with_the_people_close_to_you') }}">
+                                                            Branding, Starts with the People Close to You
+                                                        </a>
+                                                    </h6>
+                                                </div>
+                                                <div>
+                                                    <p class="pt-20 fs-17 pb-20">
+                                                        Currently, in the 21st century, there is an evolution of the world.
+                                                        Branding is taking a new shape and dimension as not only do companies
+                                                        need to brand themselves..
+                                                    </p>
+                                                </div>
+                                                <div class="sm-mb-20">
+                                                    <ul class="d-flex align-items-center">
+                                                        <li>
+                                                            <a href="{{ url_for('branding_starts_with_the_people_close_to_you') }}">
+                                                                Continue Reading <i class="bi bi-chevron-right"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Third blog post -->
+                                    <div class="left-one mb-40">
+                                        <div class="card">
+                                            <img src="{{ url_for('static', filename='images/blog/reasonsforwebsite.png') }}" alt="">
+                                            <div class="card-body">
+                                                <div class="pt-20">
+                                                    <img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="">
+                                                    <span class="pl-10 fs-14 fw-400">20 Sept. 2022</span>
+                                                    <img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
+                                                    <span class="pl-10 fs-14 fw-400">{{ comment_counts.get(3, 0) }} Comment{{ '' if comment_counts.get(3, 0) == 1 else 's' }}</span>
+                                                </div>
+                                                <div>
+                                                    <h6 class="color-one pt-20 fw-700 lh-36">
+                                                        <a href="{{ url_for('reasons_why_your_business_needs_a_website') }}">
+                                                            5 reasons why your business needs a website
+                                                        </a>
+                                                    </h6>
+                                                </div>
+                                                <div>
+                                                    <p class="pt-20 fs-17 pb-20">
+                                                        A business online presence, regardless of industry can have a massive
+                                                        impact on its success. In this day and age, some businesses still don’t
+                                                        realize that a majority of...
+                                                    </p>
+                                                </div>
+                                                <div class="sm-mb-20">
+                                                    <ul class="d-flex align-items-center">
+                                                        <li>
+                                                            <a href="{{ url_for('reasons_why_your_business_needs_a_website') }}">
+                                                                Continue Reading <i class="bi bi-chevron-right"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="left-one mb-40">
 										<div class="card">
-											<img src="{{ url_for('static', filename='images/blog/seokeywords.png') }}" alt="">
+											<img src="{{ url_for('static', filename='images/blog/brandingisnotjustlogo.png') }}" alt="">
 											<div class="card-body">
 												<div class="pt-20">
-													<img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="" class="">
-													<span class="pl-10 fs-14 fw-400">16 Sept. 2022</span>
+													<img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="">
+													<span class="pl-10 fs-14 fw-400">20 Sept. 2022</span>
 													<img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
-													<span class="pl-10 fs-14 fw-400">{{ comment_counts.get(5, 0) }} Comment{{ '' if comment_counts.get(5, 0) == 1 else 's' }}</span>
+													<span class="pl-10 fs-14 fw-400">{{ comment_counts.get(4, 0) }} Comment{{ '' if comment_counts.get(4, 0) == 1 else 's' }}</span>
 												</div>
-												<div class=""><h6 class="color-one pt-20 fw-700 lh-36"><a href="{{ url_for('keyword_to_improve_seo_and_traffic') }}">Using Keywords to improve SEO and traffic</a></h6></div>
-												<div class=""><p class="pt-20 fs-17 pb-20">You might be wondering why people stress the term “Keyword” on both websites and blogs to be precise. A keyword is simply what people search for on the internet..</p></div>
+												<div>
+													<h6 class="color-one pt-20 fw-700 lh-36">
+														<a href="{{ url_for('branding_is_not_just_logo_design') }}">
+															Branding is not just logo design
+														</a>
+													</h6>
+												</div>
+												<div>
+													<p class="pt-20 fs-17 pb-20">
+														Branding is not just logo design. Yes, you heard correctly. Branding refers
+														to the image given to you, your product or your service provided.
+														Branding refers to how the...
+													</p>
+												</div>
 												<div class="sm-mb-20">
 													<ul class="d-flex align-items-center">
-														<li><a href="{{ url_for('keyword_to_improve_seo_and_traffic') }}" class="">Continue Reading <i class="bi bi-chevron-right"></i></a></li>
+														<li>
+															<a href="{{ url_for('branding_is_not_just_logo_design') }}">
+																Continue Reading <i class="bi bi-chevron-right"></i>
+															</a>
+														</li>
 													</ul>
 												</div>
 											</div>
 										</div>
 									</div>
+                                    <div class="left-one mb-40">
+                                        <div class="card">
+                                            <img src="{{ url_for('static', filename='images/blog/brandinginfluence.png') }}" alt="">
+                                            <div class="card-body">
+                                                <div class="pt-20">
+                                                    <img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="">
+                                                    <span class="pl-10 fs-14 fw-400">14 Sept. 2022</span>
+                                                    <img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
+                                                    <span class="pl-10 fs-14 fw-400">{{ comment_counts.get(6, 0) }} Comment{{ '' if comment_counts.get(6, 0) == 1 else 's' }}</span>
+                                                </div>
+                                                <div>
+                                                    <h6 class="color-one pt-20 fw-700 lh-36">
+                                                        <a href="{{ url_for('influence_of_branding_on_customers') }}">
+                                                            Brand: Influence of branding on customers
+                                                        </a>
+                                                    </h6>
+                                                </div>
+                                                <div>
+                                                    <p class="pt-20 fs-17 pb-20">
+                                                        Branding influences how customers buy and acquire a particular product.
+                                                        It is one of the most important market elements to be considered when
+                                                        setting up any business venture. Creating...
+                                                    </p>
+                                                </div>
+                                                <div class="sm-mb-20">
+                                                    <ul class="d-flex align-items-center">
+                                                        <li>
+                                                            <a href="{{ url_for('influence_of_branding_on_customers') }}">
+                                                                Continue Reading <i class="bi bi-chevron-right"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="left-one mb-40">
+                                        <div class="card">
+                                            <img src="{{ url_for('static', filename='images/blog/requirementofbranding.png') }}" alt="">
+                                            <div class="card-body">
+                                                <div class="pt-20">
+                                                    <img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="" class="">
+                                                    <span class="pl-10 fs-14 fw-400">14 Sept. 2022</span>
+                                                    <img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
+                                                    <span class="pl-10 fs-14 fw-400">{{ comment_counts.get(7, 0) }} Comment{{ '' if comment_counts.get(7, 0) == 1 else 's' }}</span>
+                                                </div>
+                                                <div class="">
+                                                    <h6 class="color-one pt-20 fw-700 lh-36">
+                                                        <a href="{{ url_for('basic_requirements_for_business_branding') }}">Branding: 5 basic requirements for business branding</a>
+                                                    </h6>
+                                                </div>
+                                                <div class="">
+                                                    <p class="pt-20 fs-17 pb-20">Building a business may not be as easy as it seems. Especially building a business from scratch with the expectation of flourishing over a short period. Branding is essential...</p>
+                                                </div>
+                                                <div class="sm-mb-20">
+                                                    <ul class="d-flex align-items-center">
+                                                        <li>
+                                                            <a href="{{ url_for('basic_requirements_for_business_branding') }}" class="">Continue Reading <i class="bi bi-chevron-right"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-								</div>
-							</div>
+
+                                    <div class="left-one mb-40">
+                                        <div class="card">
+                                            <img src="{{ url_for('static', filename='images/blog/importanceofbusinessbranding.png') }}" alt="">
+                                            <div class="card-body">
+                                                <div class="pt-20">
+                                                    <img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="" class="">
+                                                    <span class="pl-10 fs-14 fw-400">14 Sept. 2022</span>
+                                                    <img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
+                                                    <span class="pl-10 fs-14 fw-400">{{ comment_counts.get(8, 0) }} Comment{{ '' if comment_counts.get(8, 0) == 1 else 's' }}</span>
+                                                </div>
+                                                <div class="">
+                                                    <h6 class="color-one pt-20 fw-700 lh-36">
+                                                        <a href="{{ url_for('importance_of_business_branding') }}">
+                                                            Business Branding: Importance of Business Branding
+                                                        </a>
+                                                    </h6>
+                                                </div>
+                                                <div class="">
+                                                    <p class="pt-20 fs-17 pb-20">
+                                                        What Branding can do for your Business Branding is one of the most essential parts of any business. Although, it is highly neglected by different brands and entrepreneurs, who...
+                                                    </p>
+                                                </div>
+                                                <div class="sm-mb-20">
+                                                    <ul class="d-flex align-items-center">
+                                                        <li>
+                                                            <a href="{{ url_for('importance_of_business_branding') }}" class="">Continue Reading <i class="bi bi-chevron-right"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 							<div class="col-lg-4">
 								<div class="right-blog pl-160">
 									<div class="blog-search mb-40">
 										<form class="search-form position-relative d-flex align-items-center" onsubmit="event.preventDefault()">
-										<!-- Use a button instead of an <a href=""> so clicking won't reload -->
-										<button type="button" id="searchBtn" class="search-btn" aria-label="Search">
-											<img src="{{ url_for('static', filename='images/icon/search-02.svg') }}" alt="Search">
-										</button>
+                                        <!-- Use a button instead of an <a href=""> so clicking won't reload -->
+                                        <button type="button" id="searchBtn" class="search-btn" aria-label="Search">
+                                            <img src="{{ url_for('static', filename='images/icon/search-02.svg') }}" alt="Search">
+                                        </button>
 
-										<input type="text" placeholder="Search" id="searchBox" aria-label="Search input">
-										</form>
+						<input type="text" placeholder="Search" id="searchBox" aria-label="Search input">
+						</form>
 									</div>
 									<div class="blog-categ mb-30">
 										<h6 class="h6 fw-700 mb-30">Categories:</h6>
