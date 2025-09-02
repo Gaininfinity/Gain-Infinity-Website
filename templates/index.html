@@ -40,6 +40,7 @@
 				</div>
 			</div>
 			<!--=========================header html start  1=================================  -->
+			<div class="inner-content container-fluid px-0">
 			<div class="theme-main-menu sticky-menu theme-menu-one theme-menu-two tran5s wow fadeInUp">
 				<div class="inner-content">
 					<div class="d-flex align-items-center justify-content-between">
@@ -91,6 +92,7 @@
 					</div>
 			    </div>
 			</div>
+			</div>
 			
             <!-- ==========================aside start ==================================================-->
 
@@ -125,7 +127,7 @@
 					</div>
 				</div>
 				<div class="iten">
-					<div class="banner-one tran5s pt-220 pb-140 md-pt-100 md-pb-80" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url({{url_for('static', filename='images/bg/herobanner1.png')}}') center center no-repeat;">
+					<div class="banner-one tran5s pt-220 pb-140 md-pt-100 md-pb-80" style="background: linear-gradient(90deg, #7B7B7B 0%, rgba(84, 81, 81, 0.73) 23.44%, rgba(27, 25, 25, 0.00) 100%), url('{{url_for('static', filename='images/bg/herobanner1.png') }}') center center no-repeat;">
 						<div class="container">
 							<div class="row">
 								<div class="banner-rapper-one ms-auto position-relative">
@@ -360,8 +362,8 @@
 						<div class="col-12 col-lg-6 pl-0 pl-lg-5">
 							<div class="left-content md-mb-50 position-relative">
 								<img src="{{ url_for('static', filename='images/slider/slider-01.png') }}" alt="" class="img-fluid d-block mx-auto position-relative testimonial-pic">
-								<!-- <img src="{{ url_for('static', filename='images/shape/shape-08.svg') }}" alt="" class="shapes shape-08">
-								<img src="{{ url_for('static', filename='images/shape/shape-09.svg') }}" alt="" class="shapes shape-09"> -->
+								<img src="{{ url_for('static', filename='images/shape/shape-08.svg') }}" alt="" class="shapes shape-08">
+								<!-- <img src="{{ url_for('static', filename='images/shape/shape-09.svg') }}" alt="" class="shapes shape-09"> -->
 								<span class="shapes shape_003"></span>
 								<span class="shapes shape_004"></span>
 							</div>
@@ -521,7 +523,7 @@
 					<div class="container">
 					<div class="footer_content">
 						<div class="row text-center text-lg-start">
-						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-center justify-content-center">
+						<div class="col-lg-2 mb-3 mb-lg-0 d-flex align-items-left justify-content-left">
 							<div class="footer_logo ms-lg-0 ms-2">
 							<a href=""><img src="{{ url_for('static', filename='images/logo/logo.png') }}" alt="Logo"  class="img-fluid"></a>
 							</div>
@@ -555,7 +557,7 @@
 						<div class="col-12">
 							<ul class="footer-links d-flex justify-content-center flex-wrap" style="gap: 24px; list-style: none; padding: 0; margin: 0;">
 							<li><a href="{{ url_for ('about_us') }}">About us</a></li>
-							<li><a href="#">Meet our team</a></li>
+							<li><a href="{{ url_for ('contact')}}">Meet our team</a></li>
 							<li><a href=" {{ url_for ('case') }}">Case stories</a></li>
 							<li><a href="{{url_for('about_us')}}">Faq</a></li>
 							<li><a href="{{ url_for ('contact')}}">Contact</a></li>
@@ -567,7 +569,7 @@
 							<ul class="d-flex" style="gap: 14px; list-style: none; padding: 0; margin: 0;">
 							<li><a href="https://www.facebook.com/gaininfinity1/"><i class="fab fa-facebook-f"></i></a></li>
 							<li><a href="https://www.instagram.com/gaininfinity1/"><i class="fab fa-instagram"></i></a></li>
-							<li><a href=""><i class="fab fa-twitter"></i></a></li>
+							<li><a ></a><i class="fab fa-twitter"></i></a></li>
 							<li><a href="https://www.linkedin.com/company/gaininfinity1/"><i class="fab fa-linkedin-in"></i></a></li>
 							<li><a href=""><i class="fab fa-threads"></i></a></li>
 							</ul>

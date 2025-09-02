@@ -486,7 +486,8 @@ a{font-weight: 500;}
   overflow: hidden;
 }
 .banner-one {
-    background-size: cover;
+    background-size: cover !important;
+    background-position: center center !important;
     visibility: visible;
     opacity: 1;
 }
@@ -2902,7 +2903,6 @@ a{font-weight: 500;}
 /* Set logo size globally */
 .logo img,
 .footer_logo .img-fluid {
-  width: 170px !important;
   height: 51px !important;
   object-fit: contain;
   max-width: 100%;
