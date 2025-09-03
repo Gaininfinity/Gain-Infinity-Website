@@ -217,7 +217,7 @@
 								<div class="offer-one lg-mb-30 text-center">
 									<div class="offer-pic mb-20 lg-mb-30"><img src="{{ url_for('static', filename='images/icon/offer_01.svg') }}" alt="" class=""></div>
 									<div class="mb-10 lg-mb-30"><h6 class="h6 fw-700"><a href="" class="">Digital Experience</a></h6></div>
-									<div class="mb-20 lg-mb-30"><p class="fs-16">We focus on your beand touchpoints to satisfy customers</p></div>
+									<div class="mb-20 lg-mb-30"><p class="fs-16">We focus on your brand touchpoints to satisfy customers</p></div>
 									<div class=""><a href="" class="offer-link"> <img src="{{ url_for('static', filename='images/icon/arrow_01.svg') }}" alt="" class=""></a></div>
 								</div>
 							</div>
@@ -439,10 +439,12 @@
 											 <div class="pt-20">
 												<img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="">
 												<span class="pl-10 fs-14 fw-400">22 Sept. 2022</span>
-												<img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
-												<span class="pl-10 fs-14 fw-400">
-													{{ comment_counts.get(1, 0) }} Comment{{ '' if comment_counts.get(1, 0) == 1 else 's' }}
-												</span>
+												<a href="{{ url_for('marketing_strategies') }}#comments" class="">
+													<img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
+													<span class="pl-10 fs-14 fw-400">
+														{{ comment_counts.get(1, 0) }} Comment{{ '' if comment_counts.get(1, 0) == 1 else 's' }}
+													</span>
+												</a>
 											</div>
 											<div>
 												<h6 class="color-one pt-20 fw-700 lh-36">
@@ -465,8 +467,10 @@
 											<div class="pt-20">
 												<img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="">
 												<span class="pl-10 fs-14 fw-400">22 Sept. 2022</span>
+												<a href="{{ url_for('branding_starts_with_the_people_close_to_you') }}#comments" class="">
 												<img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
 												<span class="pl-10 fs-14 fw-400">{{ comment_counts.get(2, 0) }} Comment{{ '' if comment_counts.get(2, 0) == 1 else 's' }}</span>
+												</a>
 											</div>
 											<div>
 												<h6 class="color-one pt-20 fw-700 lh-36">
@@ -492,8 +496,10 @@
 											<div class="pt-20">
 												<img src="{{ url_for('static', filename='images/icon/calendar.svg') }}" alt="">
 												<span class="pl-10 fs-14 fw-400">20 Sept. 2022</span>
+												<a href="{{ url_for('reasons_why_your_business_needs_a_website') }}#comments" class="">
 												<img src="{{ url_for('static', filename='images/icon/comment.svg') }}" alt="" class="pl-10">
 												<span class="pl-10 fs-14 fw-400">{{ comment_counts.get(3, 0) }} Comment{{ '' if comment_counts.get(3, 0) == 1 else 's' }}</span>
+												</a>
 											</div>
 											<div>
 												<h6 class="color-one pt-20 fw-700 lh-36">
@@ -559,7 +565,7 @@
 							<li><a href="{{ url_for ('about_us') }}">About us</a></li>
 							<li><a href="{{ url_for ('contact')}}">Meet our team</a></li>
 							<li><a href=" {{ url_for ('case') }}">Case stories</a></li>
-							<li><a href="{{url_for('about_us')}}">Faq</a></li>
+							<li><a href="{{ url_for('about_us') }}#faq">Faq</a></li>
 							<li><a href="{{ url_for ('contact')}}">Contact</a></li>
 							</ul>
 						</div>

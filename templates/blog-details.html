@@ -292,7 +292,7 @@
 									</div>
 									<div class="border"></div>
 									<h6 class="h6 fw-700 mt-40 mb-40">Leave A Comment</h6>
-									<div class="left-five">
+									<div class="left-five" id="comments">
 										<form>
 											<input type="text" placeholder="Name*">
 											<div class="border mt-20 mb-40"></div>
@@ -411,7 +411,7 @@
 							<li><a href="{{ url_for ('about_us') }}">About us</a></li>
 							<li><a href="{{ url_for ('contact')}}">Meet our team</a></li>
 							<li><a href=" {{ url_for ('case') }}">Case stories</a></li>
-							<li><a href="{{url_for('about_us')}}">Faq</a></li>
+							<li><a href="{{ url_for('about_us') }}#faq">Faq</a></li>
 							<li><a href="{{ url_for ('contact')}}">Contact</a></li>
 							</ul>
 						</div>
